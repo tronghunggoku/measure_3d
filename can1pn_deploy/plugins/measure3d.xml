@@ -16,7 +16,7 @@
 		ui_pos.normal="righttop,20,20"
 		ui_pos.mobile="righttop,10,10"
 		ui_dragable.bool="true"
-		gap.number="0.0"
+		gap.number="0.5"
 		showslope.bool="false"
 		unit_format="roundval(v,1) + ' cm'"
 		/>
@@ -329,8 +329,8 @@
 		bgshadow="0 0 5 0x000000 0.5"
 		distorted="true"
 		depth="0"
-		depthbuffer="false"
-		depthoffset="-100"
+		depthbuffer="true"
+		depthoffset="-10"
 		depthwrite="false"
 		rotationorder="zxy"
 		enabled="false"
@@ -357,9 +357,9 @@
 		rotationorder="zxy"
 		twosided="true"
 		depth="0"
-		depthbuffer="false"
+		depthbuffer="true"
 		depthwrite="false"
-		depthoffset="-200"
+		depthoffset="-20"
 		zorder="1"
 		/>
 
@@ -371,9 +371,9 @@
 		bordercolor="0x00FF00"
 		bordergradient="0xFF000000|0x00FFFFFF|0xFF000000|4"
 		borderalpha="0.7"
-		depthbuffer="false"
+		depthbuffer="true"
 		depthwrite="false"
-		depthoffset="-200"
+		depthoffset="-20"
 		enabled="false"
 		zorder="1"
 		/>
@@ -389,9 +389,11 @@
 		bgroundedge="8"
 		bgshadow="0 4px 14px rgba(0,0,0,0.5)"
 		padding="4 8"
+		distorted="true"
 		depth="0"
-		depthbuffer="false"
-		depthoffset="-200"
+		depthbuffer="true"
+		depthwrite="false"
+		depthoffset="-30"
 		zorder="2"
 		/>
 

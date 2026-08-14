@@ -195,6 +195,12 @@ Thẻ cấu hình gốc tại đầu file [measure3d.xml](file:///Users/gokuwebd
   ```
   Giúp đảm bảo thoát trạng thái đo dở dang nhưng vẫn lưu giữ các đường đo đã vẽ hoàn thành trên không gian 3D.
 
+### 6.4. Cơ Chế Khử Nhìn Xuyên Tường (WebGL Depth Buffer Occlusion)
+- **Vấn đề**: Khi người dùng đo ở một phòng (vd: Phòng Bếp) rồi di chuyển sang phòng khác (vd: Phòng Ngủ), các đường đo và nhãn kích thước không được vẽ đè lên tường chắn phía trước (X-ray effect).
+- **Giải pháp**:
+  - Bật `depthbuffer="true"` cho `measure3d_line`, `measure3d_marker`, `measure3d_linetext`, `measure3d_cursor`.
+  - Tinh chỉnh `depthoffset="-20"` đến `"-30"` để nhãn và đường thẳng nổi nhẹ trên bề mặt tường đo chống hiện tượng Z-fighting, nhưng vẫn bị các bức tường nằm giữa camera và điểm đo che khuất tự nhiên theo đúng tầm nhìn thực tế (Line-of-Sight).
+
 ---
 
 ## 7. Hướng Dẫn & Khuyến Nghị Mã Hóa Bảo Mật (Security & IP Protection)
