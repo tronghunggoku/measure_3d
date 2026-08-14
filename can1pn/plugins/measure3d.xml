@@ -22,90 +22,174 @@
 		/>
 
 
-	<!-- css styles for the default user-interface -->
+	<!-- css styles for the default user-interface (MUI Style & Modern Glassmorphism) -->
 	<cssstyles><![CDATA[
 		.m3d_panel {
-			font-family: "Inter", "Outfit", -apple-system, sans-serif;
-			padding: 4px;
+			font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Inter", "Segoe UI", sans-serif;
+			padding: 6px 4px 4px 4px;
 			color: #f8fafc;
-			min-width: 210px;
+			min-width: 220px;
+			user-select: none;
+		}
+		.m3d_header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 12px;
+			padding: 0 4px 6px 4px;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+		}
+		.m3d_title_wrap {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+		.m3d_head_icon {
+			width: 18px;
+			height: 18px;
+			fill: #F16A24;
+			display: flex;
+			align-items: center;
 		}
 		.m3d_title {
 			font-size: 13px;
 			font-weight: 700;
 			text-transform: uppercase;
-			letter-spacing: 0.08em;
-			color: #94a3b8;
+			letter-spacing: 0.06em;
+			color: #ffffff;
+			line-height: 1;
+		}
+		.m3d_drag_badge {
+			font-size: 10px;
+			color: #64748b;
+			padding: 2px 6px;
+			background: rgba(255, 255, 255, 0.05);
+			border-radius: 4px;
+			font-weight: 500;
+		}
+		
+		/* Segmented MUI Toggle Switch */
+		.m3d_toggle {
+			display: flex;
+			background: rgba(0, 0, 0, 0.35);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			border-radius: 12px;
+			padding: 3px;
+			gap: 4px;
 			margin-bottom: 12px;
-			padding-left: 8px;
-			border-left: 3px solid #F16A24;
-			line-height: 1.2;
+			box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+		}
+		.m3d_seg {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 6px;
+			padding: 8px 10px;
+			border-radius: 9px;
+			font-size: 13px;
+			font-weight: 600;
+			color: #94a3b8;
+			cursor: pointer;
+			text-decoration: none;
+			transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+		.m3d_seg:hover {
+			color: #ffffff;
+			background: rgba(255, 255, 255, 0.05);
+			text-decoration: none;
+		}
+		.m3d_seg_active {
+			background: linear-gradient(135deg, #FF7A00 0%, #EE4D2D 100%) !important;
+			color: #ffffff !important;
+			box-shadow: 0 3px 12px rgba(241, 106, 36, 0.45);
+		}
+		.m3d_seg_icon {
+			width: 17px;
+			height: 17px;
+			fill: currentColor;
+			display: inline-block;
+			flex-shrink: 0;
+		}
+
+		/* MUI Action Buttons */
+		.m3d_btn_list {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
 		}
 		.m3d_btn {
 			display: flex;
 			align-items: center;
+			gap: 10px;
 			background: rgba(255, 255, 255, 0.05);
-			border: 1px solid rgba(255, 255, 255, 0.08);
-			border-radius: 8px;
-			padding: 10px 14px;
-			margin-bottom: 8px;
+			border: 1px solid rgba(255, 255, 255, 0.09);
+			border-radius: 10px;
+			padding: 9px 12px;
 			cursor: pointer;
-			transition: all 0.25s ease;
+			transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 			text-decoration: none;
 			color: #e2e8f0;
-			font-size: 13px;
+			font-size: 12.5px;
 			font-weight: 600;
+			position: relative;
+			overflow: hidden;
 		}
 		.m3d_btn:hover {
-			background: #F16A24;
-			border-color: #F16A24;
-			color: white;
+			background: rgba(241, 106, 36, 0.18);
+			border-color: rgba(241, 106, 36, 0.45);
+			color: #ffffff;
 			transform: translateY(-1px);
-			box-shadow: 0 4px 12px rgba(241, 106, 36, 0.35);
+			box-shadow: 0 4px 14px rgba(241, 106, 36, 0.25);
 			text-decoration: none;
 		}
 		.m3d_btn:active {
 			transform: translateY(0);
 			box-shadow: none;
 		}
-		.m3d_icon {
-			margin-right: 10px;
-			font-size: 15px;
-			display: inline-block;
-			transition: transform 0.2s ease;
-		}
-		.m3d_btn:hover .m3d_icon {
-			transform: scale(1.2);
-		}
-		/* Segmented toggle: chuyen giua che do Di va Do */
-		.m3d_toggle {
+		.m3d_btn_icon_box {
 			display: flex;
-			background: rgba(255, 255, 255, 0.06);
-			border: 1px solid rgba(255, 255, 255, 0.10);
-			border-radius: 10px;
-			padding: 3px;
-			gap: 3px;
-			margin-bottom: 10px;
-		}
-		.m3d_seg {
-			flex: 1;
-			text-align: center;
-			padding: 9px 6px;
-			border-radius: 8px;
-			font-size: 13px;
-			font-weight: 700;
-			color: #cbd5e1;
-			cursor: pointer;
-			text-decoration: none;
+			align-items: center;
+			justify-content: center;
+			width: 28px;
+			height: 28px;
+			background: rgba(255, 255, 255, 0.07);
+			border-radius: 7px;
+			flex-shrink: 0;
 			transition: all 0.2s ease;
 		}
-		.m3d_seg:hover { color: #ffffff; text-decoration: none; }
-		.m3d_seg_active {
+		.m3d_btn:hover .m3d_btn_icon_box {
 			background: #F16A24;
 			color: #ffffff;
 			box-shadow: 0 2px 8px rgba(241, 106, 36, 0.4);
 		}
-		.m3d_seg_active:hover { color: #ffffff; }
+		.m3d_btn_icon {
+			width: 16px;
+			height: 16px;
+			fill: currentColor;
+		}
+		.m3d_btn_save {
+			background: rgba(241, 106, 36, 0.12);
+			border-color: rgba(241, 106, 36, 0.25);
+			color: #ff9d66;
+		}
+		.m3d_btn_save:hover {
+			background: #F16A24;
+			border-color: #F16A24;
+			color: #ffffff;
+		}
+		.m3d_btn_save .m3d_btn_icon_box {
+			background: rgba(241, 106, 36, 0.25);
+			color: #ff8e4d;
+		}
+		.m3d_hint {
+			font-size: 11px;
+			color: #64748b;
+			text-align: center;
+			margin-top: 8px;
+			padding-top: 6px;
+			border-top: 1px dashed rgba(255, 255, 255, 0.08);
+		}
 	]]></cssstyles>
 
 
@@ -115,22 +199,47 @@
 		var segWalk   = isMeasure ? "m3d_seg" : "m3d_seg m3d_seg_active";
 		var segMeas   = isMeasure ? "m3d_seg m3d_seg_active" : "m3d_seg";
 
+		// SVG Icons (Material UI / Material Design 3 Style)
+		var svgRulerHead = '<svg class="m3d_head_icon" viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h2v4h2V8h2v2h2V8h2v4h2V8h2v2h2V8h3v8z"/></svg>';
+		var svgWalk      = '<svg class="m3d_seg_icon" viewBox="0 0 24 24"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg>';
+		var svgMeasure   = '<svg class="m3d_seg_icon" viewBox="0 0 24 24"><path d="M17.66 17.66l-1.41 1.41L4.22 7.05l1.41-1.41 12.03 12.02zm-4.24-9.9l1.41 1.41-1.41 1.41-1.41-1.41 1.41-1.41zm-2.83 2.83l1.41 1.41-1.41 1.41-1.41-1.41 1.41-1.41zm-2.83 2.83l1.41 1.41-1.41 1.41-1.41-1.41 1.41-1.41zM20.49 4.93L19.07 3.51a1.996 1.996 0 0 0-2.83 0L3.51 16.24a1.996 1.996 0 0 0 0 2.83l1.41 1.41a1.996 1.996 0 0 0 2.83 0L20.49 7.76a1.996 1.996 0 0 0 0-2.83z"/></svg>';
+		var svgPoints    = '<svg class="m3d_btn_icon" viewBox="0 0 24 24"><path d="M19.5 9.5c-1.03 0-1.9.62-2.29 1.5H6.79c-.39-.88-1.26-1.5-2.29-1.5C3.12 9.5 2 10.62 2 12s1.12 2.5 2.5 2.5c1.03 0 1.9-.62 2.29-1.5h10.42c.39.88 1.26 1.5 2.29 1.5 1.38 0 2.5-1.12 2.5-2.5s-1.12-2.5-2.5-2.5z"/></svg>';
+		var svgSurfaces  = '<svg class="m3d_btn_icon" viewBox="0 0 24 24"><path d="M9.01 14H2v2h7.01v3L13 15l-3.99-4v3zm5.98-1v-3H22V8h-7.01V5L11 9l3.99 4z"/></svg>';
+		var svgSave      = '<svg class="m3d_btn_icon" viewBox="0 0 24 24"><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zM6 6h9v4H6z"/></svg>';
+
 		var html = ""
 			+ '<div class="m3d_panel">'
-			+   '<div class="m3d_title">Th\u01b0\u1edbc \u0110o 3D</div>'
+			+   '<div class="m3d_header">'
+			+     '<div class="m3d_title_wrap">'
+			+       svgRulerHead
+			+       '<span class="m3d_title">Th\u01b0\u1edbc \u0110o 3D</span>'
+			+     '</div>'
+			+   '</div>'
 			+   '<div class="m3d_toggle">'
-			+     '<a class="' + segWalk + '" href="event:m3d_mode_walk()">\ud83d\udeb6 \u0110i</a>'
-			+     '<a class="' + segMeas + '" href="event:m3d_mode_measure()">\ud83d\udccf \u0110o</a>'
+			+     '<a class="' + segWalk + '" href="event:m3d_mode_walk()">'
+			+       svgWalk + '<span>\u0110i</span>'
+			+     '</a>'
+			+     '<a class="' + segMeas + '" href="event:m3d_mode_measure()">'
+			+       svgMeasure + '<span>\u0110o</span>'
+			+     '</a>'
 			+   '</div>';
 
 		if (isMeasure) {
-			html = html
-				+ '<a class="m3d_btn" href="event:start_measuring_between_points(true)">'
-				+   '<span class="m3d_icon">\ud83d\udccf</span> \u0110o gi\u1eefa 2 \u0111i\u1ec3m</a>'
-				+ '<a class="m3d_btn" href="event:start_measuring_between_surfaces(true)">'
-				+   '<span class="m3d_icon">\ud83d\udcd0</span> \u0110o gi\u1eefa 2 b\u1ec1 m\u1eb7t</a>'
-				+ '<a class="m3d_btn" href="event:save_measurements()" style="background: rgba(241, 106, 36, 0.12); border-color: rgba(241, 106, 36, 0.20); color: #ff8e4d;">'
-				+   '<span class="m3d_icon">\ud83d\udcbe</span> L\u01b0u s\u1ed1 \u0111o</a>';
+			html += '<div class="m3d_btn_list">'
+				+   '<a class="m3d_btn" href="event:start_measuring_between_points(true)">'
+				+     '<div class="m3d_btn_icon_box">' + svgPoints + '</div>'
+				+     '<span>\u0110o gi\u1eefa 2 \u0111i\u1ec3m</span>'
+				+   '</a>'
+				+   '<a class="m3d_btn" href="event:start_measuring_between_surfaces(true)">'
+				+     '<div class="m3d_btn_icon_box">' + svgSurfaces + '</div>'
+				+     '<span>\u0110o gi\u1eefa 2 b\u1ec1 m\u1eb7t</span>'
+				+   '</a>'
+				+   '<a class="m3d_btn m3d_btn_save" href="event:save_measurements()">'
+				+     '<div class="m3d_btn_icon_box">' + svgSave + '</div>'
+				+     '<span>L\u01b0u s\u1ed1 \u0111o</span>'
+				+   '</a>'
+				+ '</div>'
+				+ '<div class="m3d_hint">Double-click \u0111\u1ec3 ch\u1ecdn \u0111i\u1ec3m \u0111o \u2022 ESC \u0111\u1ec3 hu\u1ef7</div>';
 		}
 		html += '</div>';
 
