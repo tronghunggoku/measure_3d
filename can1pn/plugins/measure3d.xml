@@ -268,7 +268,7 @@
 
 
 
-	<action autorun="onstart" scope="local" type="Javascript">
+	<action autorun="onstart" scope="local" type="Javascript"><![CDATA[
 		var measure3d = krpano.measure3d;
 
 		if(measure3d.ui)
@@ -301,16 +301,16 @@
 				ui.ondown = "changealign(lefttop); asyncloop(pressed, x+=mouse.dx; y+=mouse.dy; clamp(x,0,calc(stagewidth-pixelwidth)); clamp(y,0,calc(stageheight-pixelheight)); );";
 			}
 
-			// Danh dau con tro dang o tren panel de handler click & mouse_pos cua 360 bo qua
+			// Danh dau con tro dang o tren panel
 			ui.onover = function() { krpano.overMeasureUI = true; };
 			ui.onout  = function() { krpano.overMeasureUI = false; };
 
-			// Mac dinh o che do "Di" (walk) va phan loai do 2 diem (type 1)
+			// Mac dinh o che do Di va phan loai do 2 diem
 			krpano.tourMode = "walk";
 			krpano.measureType = 1;
 			krpano.call("m3d_render_ui()");
 		}
-	</action>
+	]]></action>
 
 
 
@@ -406,35 +406,35 @@
 
 	<!-- API actions for starting/stopping the measurements -->
 
-	<action name="start_measuring_between_points" scope="local" args="showinfo">
+	<action name="start_measuring_between_points" scope="local" args="showinfo" type="Javascript"><![CDATA[
 		krpano.measureType = 1;
 		if (krpano.measure3d_loop === true && krpano.tourMode === "measure")
 		{
 			if (window.m3d_cleanup_draft) { window.m3d_cleanup_draft(); }
-			if (showinfo) { measure3d_showinfo('double click to start/stop measuring'); }
+			if (args[1]) { krpano.call("measure3d_showinfo('double click to start/stop measuring')"); }
 			krpano.call("m3d_render_ui()");
 		}
 		else
 		{
-			if (showinfo) { measure3d_showinfo('double click to start/stop measuring'); }
-			measure3d_start(1);
+			if (args[1]) { krpano.call("measure3d_showinfo('double click to start/stop measuring')"); }
+			krpano.call("measure3d_start(1)");
 		}
-	</action>
+	]]></action>
 
-	<action name="start_measuring_between_surfaces" scope="local" args="showinfo">
+	<action name="start_measuring_between_surfaces" scope="local" args="showinfo" type="Javascript"><![CDATA[
 		krpano.measureType = 2;
 		if (krpano.measure3d_loop === true && krpano.tourMode === "measure")
 		{
 			if (window.m3d_cleanup_draft) { window.m3d_cleanup_draft(); }
-			if (showinfo) { measure3d_showinfo('double click to measure surface'); }
+			if (args[1]) { krpano.call("measure3d_showinfo('double click to measure surface')"); }
 			krpano.call("m3d_render_ui()");
 		}
 		else
 		{
-			if (showinfo) { measure3d_showinfo('double click to measure surface'); }
-			measure3d_start(2);
+			if (args[1]) { krpano.call("measure3d_showinfo('double click to measure surface')"); }
+			krpano.call("measure3d_start(2)");
 		}
-	</action>
+	]]></action>
 	
 	<action name="stop_measuring" scope="local" type="Javascript"><![CDATA[
 		krpano.measure3d_loop = false;
@@ -461,7 +461,7 @@
 	
 	
 	
-	<action name="save_measurements" type="js"><![CDATA[
+	<action name="save_measurements" type="Javascript"><![CDATA[
 		var xmlcode = '';
 		krpano.hotspot.forEach( function(hs)
 		{
