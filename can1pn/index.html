@@ -21,13 +21,25 @@
       background: #eeeeee;
     }
 
-    /* Hide the OS cursor over the panorama so only the in-scene floor
+    /* Hide the OS cursor over the 360 panorama canvas so only the in-scene floor
        cursor (hotspot_mouse plane.png) and the directional arrow
        (hotspot_mouse_arrow svg) are visible. Pointer events still
        reach krpano normally. */
-    #pano,
-    #pano * {
+    #pano canvas {
       cursor: none !important;
+    }
+
+    /* Ensure OS cursor is properly visible on UI panels and popups */
+    .m3d_panel,
+    .m3d_panel * {
+      cursor: default;
+    }
+    .m3d_panel .m3d_btn,
+    .m3d_panel .m3d_seg {
+      cursor: pointer !important;
+    }
+    .m3d_panel .m3d_header {
+      cursor: move !important;
     }
 
     img,

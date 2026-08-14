@@ -10,11 +10,11 @@
 	-->
 
 
-	<!-- settings -->
+	<!-- settings: default UI position at top right -->
 	<measure3d
 		ui.bool="true"
-		ui_pos.normal="left,10,0"
-		ui_pos.mobile="lefttop,10,10"
+		ui_pos.normal="righttop,20,20"
+		ui_pos.mobile="righttop,10,10"
 		ui_dragable.bool="true"
 		gap.number="0.0"
 		showslope.bool="false"
@@ -30,6 +30,7 @@
 			color: #f8fafc;
 			min-width: 220px;
 			user-select: none;
+			cursor: default !important;
 		}
 		.m3d_header {
 			display: flex;
@@ -38,6 +39,7 @@
 			margin-bottom: 12px;
 			padding: 0 4px 6px 4px;
 			border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+			cursor: move !important;
 		}
 		.m3d_title_wrap {
 			display: flex;
@@ -90,7 +92,7 @@
 			font-size: 13px;
 			font-weight: 600;
 			color: #94a3b8;
-			cursor: pointer;
+			cursor: pointer !important;
 			text-decoration: none;
 			transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 		}
@@ -126,7 +128,7 @@
 			border: 1px solid rgba(255, 255, 255, 0.09);
 			border-radius: 10px;
 			padding: 9px 12px;
-			cursor: pointer;
+			cursor: pointer !important;
 			transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 			text-decoration: none;
 			color: #e2e8f0;
@@ -147,6 +149,12 @@
 			transform: translateY(0);
 			box-shadow: none;
 		}
+		.m3d_btn_active {
+			background: rgba(241, 106, 36, 0.22) !important;
+			border-color: #F16A24 !important;
+			color: #ffffff !important;
+			box-shadow: 0 3px 12px rgba(241, 106, 36, 0.35) !important;
+		}
 		.m3d_btn_icon_box {
 			display: flex;
 			align-items: center;
@@ -162,6 +170,11 @@
 			background: #F16A24;
 			color: #ffffff;
 			box-shadow: 0 2px 8px rgba(241, 106, 36, 0.4);
+		}
+		.m3d_btn_active .m3d_btn_icon_box {
+			background: #F16A24 !important;
+			color: #ffffff !important;
+			box-shadow: 0 2px 8px rgba(241, 106, 36, 0.5) !important;
 		}
 		.m3d_btn_icon {
 			width: 16px;
@@ -196,8 +209,12 @@
 	<!-- Render giao dien dong theo che do (walk / measure) -->
 	<action name="m3d_render_ui" scope="local" type="Javascript"><![CDATA[
 		var isMeasure = (krpano.tourMode === "measure");
+		var mType     = krpano.measureType || 1;
 		var segWalk   = isMeasure ? "m3d_seg" : "m3d_seg m3d_seg_active";
 		var segMeas   = isMeasure ? "m3d_seg m3d_seg_active" : "m3d_seg";
+
+		var btnPointsClass   = (isMeasure && mType === 1) ? "m3d_btn m3d_btn_active" : "m3d_btn";
+		var btnSurfacesClass = (isMeasure && mType === 2) ? "m3d_btn m3d_btn_active" : "m3d_btn";
 
 		// SVG Icons (Material UI / Material Design 3 Style)
 		var svgRulerHead = '<svg class="m3d_head_icon" viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h2v4h2V8h2v2h2V8h2v4h2V8h2v2h2V8h3v8z"/></svg>';
@@ -214,6 +231,7 @@
 			+       svgRulerHead
 			+       '<span class="m3d_title">Th\u01b0\u1edbc \u0110o 3D</span>'
 			+     '</div>'
+			+     '<div class="m3d_drag_badge">\u2756</div>'
 			+   '</div>'
 			+   '<div class="m3d_toggle">'
 			+     '<a class="' + segWalk + '" href="event:m3d_mode_walk()">'
@@ -226,11 +244,11 @@
 
 		if (isMeasure) {
 			html += '<div class="m3d_btn_list">'
-				+   '<a class="m3d_btn" href="event:start_measuring_between_points(true)">'
+				+   '<a class="' + btnPointsClass + '" href="event:start_measuring_between_points(true)">'
 				+     '<div class="m3d_btn_icon_box">' + svgPoints + '</div>'
 				+     '<span>\u0110o gi\u1eefa 2 \u0111i\u1ec3m</span>'
 				+   '</a>'
-				+   '<a class="m3d_btn" href="event:start_measuring_between_surfaces(true)">'
+				+   '<a class="' + btnSurfacesClass + '" href="event:start_measuring_between_surfaces(true)">'
 				+     '<div class="m3d_btn_icon_box">' + svgSurfaces + '</div>'
 				+     '<span>\u0110o gi\u1eefa 2 b\u1ec1 m\u1eb7t</span>'
 				+   '</a>'
@@ -265,10 +283,10 @@
 				align:ui_pos[0], x:ui_pos[1], y:ui_pos[2],
 				css:"color:white;",
 				bgcolor:0x0f172a,
-				bgalpha:0.80,
+				bgalpha:0.85,
 				bgborder:"1 0xffffff 0.12",
 				bgroundedge:14,
-				bgshadow:"0 12px 36px rgba(0,0,0,0.4)",
+				bgshadow:"0 12px 36px rgba(0,0,0,0.45)",
 				cursor:"default",
 				// Chan click xuyen qua panel xuong 360: layer nuot toan bo su kien chuot.
 				capture:true,
@@ -283,13 +301,13 @@
 				ui.ondown = "changealign(lefttop); asyncloop(pressed, x+=mouse.dx; y+=mouse.dy; clamp(x,0,calc(stagewidth-pixelwidth)); clamp(y,0,calc(stageheight-pixelheight)); );";
 			}
 
-			// Danh dau con tro dang o tren panel de handler click cua 360 bo qua,
-			// tranh click vao UI van tuong tac voi 360.
+			// Danh dau con tro dang o tren panel de handler click & mouse_pos cua 360 bo qua
 			ui.onover = function() { krpano.overMeasureUI = true; };
 			ui.onout  = function() { krpano.overMeasureUI = false; };
 
-			// Mac dinh o che do "Di" (walk); render giao dien theo che do.
+			// Mac dinh o che do "Di" (walk) va phan loai do 2 diem (type 1)
 			krpano.tourMode = "walk";
+			krpano.measureType = 1;
 			krpano.call("m3d_render_ui()");
 		}
 	</action>
@@ -377,8 +395,7 @@
 		/>
 
 
-	<!-- Toggle: chuyen giua che do Di (walk) va Do (measure).
-	     O moi che do, che do con lai bi vo hieu hoa. -->
+	<!-- Toggle: chuyen giua che do Di (walk) va Do (measure). -->
 	<action name="m3d_mode_walk" scope="local">
 		stop_measuring();
 	</action>
@@ -390,17 +407,39 @@
 	<!-- API actions for starting/stopping the measurements -->
 
 	<action name="start_measuring_between_points" scope="local" args="showinfo">
-		if(showinfo, measure3d_showinfo('double click to start/stop measuring'));
-		measure3d_start(1);
+		krpano.measureType = 1;
+		if (krpano.measure3d_loop === true && krpano.tourMode === "measure")
+		{
+			if (window.m3d_cleanup_draft) { window.m3d_cleanup_draft(); }
+			if (showinfo) { measure3d_showinfo('double click to start/stop measuring'); }
+			krpano.call("m3d_render_ui()");
+		}
+		else
+		{
+			if (showinfo) { measure3d_showinfo('double click to start/stop measuring'); }
+			measure3d_start(1);
+		}
 	</action>
 
 	<action name="start_measuring_between_surfaces" scope="local" args="showinfo">
-		if(showinfo, measure3d_showinfo('double click to measure'));;
-		measure3d_start(2);
+		krpano.measureType = 2;
+		if (krpano.measure3d_loop === true && krpano.tourMode === "measure")
+		{
+			if (window.m3d_cleanup_draft) { window.m3d_cleanup_draft(); }
+			if (showinfo) { measure3d_showinfo('double click to measure surface'); }
+			krpano.call("m3d_render_ui()");
+		}
+		else
+		{
+			if (showinfo) { measure3d_showinfo('double click to measure surface'); }
+			measure3d_start(2);
+		}
 	</action>
 	
 	<action name="stop_measuring" scope="local" type="Javascript"><![CDATA[
 		krpano.measure3d_loop = false;
+		if (window.m3d_cleanup_draft) { window.m3d_cleanup_draft(); }
+
 		// Bat lai dieu huong cua plugin navigator sau khi ket thuc do.
 		krpano.jyNavEnabled = false;
 		krpano.get("events").ondoubleclick = null;
@@ -446,7 +485,7 @@
 
 	<action name="measure3d_showinfo" scope="local" args="infotext">
 		addlayer('measure3d_infotext',l);
-		set(l, type=text, html=get(infotext), css='font-size:20px;font-weight:bold;color:white;text-align:center', bg=false, txtshadow='0 1 4 0x000000 1.0', align=center, enabled=false, alpha=0, width=50%);
+		set(l, type=text, html=get(infotext), css='font-size:18px;font-weight:bold;color:white;text-align:center', bg=false, txtshadow='0 1 4 0x000000 1.0', align=center, enabled=false, alpha=0, width=50%);
 		tween(l.alpha, 1.0);
 		delayedcall(3.0,
 			tween(l.alpha, 0.0, 0.25, default, removelayer(get(l.name)); );
@@ -461,6 +500,7 @@
 		var gap = measure3d.gap;
 		
 		var mode = 1*args[1];
+		krpano.measureType = mode;
 
 		// Vô hiệu hóa các hotspot di chuyển khi đo đạc
 		krpano.hotspot.forEach(function(h) {
@@ -474,8 +514,6 @@
 		});
 
 		// Chan dieu huong cua plugin "navigator" (forward-sensing) khi dang do.
-		// navigator_events.onclick chi chuyen scene khi jyNavEnabled == false,
-		// nen giu jyNavEnabled = true de khong bi chuyen diem/scene luc click/double click.
 		krpano.jyNavEnabled = true;
 
 		// Danh dau dang o che do Do va cap nhat giao dien toggle.
@@ -491,8 +529,22 @@
 		var p1marker = null;
 		var p2marker = null;
 
+		window.m3d_cleanup_draft = function() {
+			if (line) { line.remove(); line = null; }
+			if (p1marker) { p1marker.remove(); p1marker = null; }
+			if (p2marker) { p2marker.remove(); p2marker = null; }
+			line_p1 = null;
+			line_p2 = null;
+		};
+
 		krpano.events.ondoubleclick = function()
 		{
+			// Khong thuc hien ve neu chuot dang nam tren UI
+			if (krpano.overMeasureUI) {
+				return;
+			}
+
+			var currentMode = krpano.measureType || 1;
 			var hit = null;
 
 			if (line == null)
@@ -515,7 +567,7 @@
 				p1marker.ry = hs.ry;
 				p1marker.rz = hs.rz;
 
-				if (mode == 2)
+				if (currentMode == 2)
 				{
 					hit = krpano.raycast(hs.tx, hs.ty, hs.tz, hs.nx, hs.ny, hs.nz);
 					if (hit)
@@ -529,6 +581,8 @@
 						krpano.call("measure3d_showinfo('no hit')");
 						p1marker.remove();
 						line.remove();
+						line = null;
+						p1marker = null;
 						return;
 					}
 				}
@@ -650,6 +704,12 @@
 		krpano.actions.asyncloop("measure3d_loop",
 			function()
 			{
+				if (krpano.overMeasureUI)
+				{
+					hs.visible = false;
+					return;
+				}
+
 				var hit = null;
 
 				if (krpano.hoveringelement == null || krpano.hoveringelement == hs || (krpano.hoveringelement && krpano.hoveringelement.hittest))

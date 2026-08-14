@@ -41,7 +41,7 @@ window.Panorama.on("shade_change", () => {
   window.krpano.call("onviewchange()");
 });
 window.Panorama.on("mouse_pos", (event) => {
-  if (window.krpano && (window.krpano.get("measure3d_loop") == true || window.krpano.get("measure3d_loop") === "true" || window.krpano.measure3d_loop === true)) {
+  if (window.krpano && (window.krpano.get("measure3d_loop") == true || window.krpano.get("measure3d_loop") === "true" || window.krpano.measure3d_loop === true || window.krpano.overMeasureUI === true)) {
     window.krpano.set("hotspot[hotspot_mouse].visible", false);
     return;
   }

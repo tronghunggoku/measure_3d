@@ -157,7 +157,7 @@
   // minimal and matches the other handler's hit semantics.
   window.Panorama.on("mouse_pos", function (event) {
     if (!window.krpano || !window.krpano.actions) return;
-    if (window.krpano.get("measure3d_loop") == true || window.krpano.get("measure3d_loop") === "true" || window.krpano.measure3d_loop === true) {
+    if (window.krpano.get("measure3d_loop") == true || window.krpano.get("measure3d_loop") === "true" || window.krpano.measure3d_loop === true || window.krpano.overMeasureUI === true) {
       window.krpano.set(HS + ".visible", false);
       return;
     }
