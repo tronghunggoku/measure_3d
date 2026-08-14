@@ -381,14 +381,14 @@
 
 	<style name="measure3d_linetext"
 		type="text"
-		css="font-family:-apple-system, BlinkMacSystemFont, 'Roboto', 'Inter', sans-serif; font-size:13px; font-weight:700; color:#ffffff;"
+		css="font-family:-apple-system, BlinkMacSystemFont, 'Roboto', 'Inter', sans-serif; font-size:13px; font-weight:700; color:#ffffff; line-height:1.2; text-align:center;"
 		textalign="center"
 		bgcolor="0x0f172a"
 		bgalpha="0.88"
-		bgborder="1 0xffffff 0.20"
-		bgroundedge="10"
-		bgshadow="0 6px 20px rgba(0,0,0,0.5)"
-		padding="6 12"
+		bgborder="1 0xffffff 0.22"
+		bgroundedge="8"
+		bgshadow="0 4px 14px rgba(0,0,0,0.5)"
+		padding="4 8"
 		depth="0"
 		depthbuffer="false"
 		depthoffset="-200"
@@ -605,19 +605,16 @@
 			krpano.v = length;
 			krpano.actions.calc("v_formated", measure3d.unit_format);
 
-			var svgRulerSmall = '<svg style="vertical-align:middle;margin-right:5px;display:inline-block;" width="13" height="13" viewBox="0 0 24 24" fill="#F16A24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h2v4h2V8h2v2h2V8h2v4h2V8h2v2h2V8h3v8z"/></svg>';
-			var svgTrashSmall = '<svg style="vertical-align:middle;margin-right:5px;display:inline-block;" width="13" height="13" viewBox="0 0 24 24" fill="#ff4d4f"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>';
-
-			var normalHtml = '<span style="display:inline-flex;align-items:center;white-space:nowrap;">' + svgRulerSmall + '<span>' + krpano.v_formated + '</span></span>';
+			var normalHtml = krpano.v_formated;
 
 			if (measure3d.showslope)
 			{
 				var y_angle = Math.atan2(-dy, Math.sqrt(dx*dx + dz*dz) ) / Math.PI * 180.0;
-				normalHtml += '<br/><span style="font-size:10.5px;color:#94a3b8;font-weight:500;">' + Math.abs(y_angle).toFixed(2) + '°</span>';
+				normalHtml += "[br][span style='font-size:10.5px;color:#94a3b8;font-weight:normal;']" + Math.abs(y_angle).toFixed(2) + "°[/span]";
 			}
 
 			lineinfo.html = normalHtml;
-			lineinfo.deletehtml = '<span style="display:inline-flex;align-items:center;color:#ff4d4f;font-weight:700;font-size:12px;white-space:nowrap;">' + svgTrashSmall + '<span>Xo\u00e1 s\u1ed1 \u0111o</span></span>';
+			lineinfo.deletehtml = "[span style='color:#ff4d4f;font-weight:900;font-size:13px;margin-right:4px;vertical-align:baseline;']\u2715[/span][span style='color:#ff4d4f;font-weight:700;font-size:12px;']Xo\u00e1[/span]";
 
 			// place between the points
 			lineinfo.tx = 0.5*line_p1.x + 0.5*line_p2.x;
@@ -637,15 +634,15 @@
 				{
 					lineinfo.backuphtml = lineinfo.html;
 					lineinfo.html = lineinfo.deletehtml;
-					lineinfo.bgborder = "1 0xff4d4f 0.65";
-					lineinfo.bgcolor = 0x221115;
+					lineinfo.bgborder = "1 0xff4d4f 0.70";
+					lineinfo.bgcolor = 0x221116;
 
 					krpano.actions.delayedcall(2, function()
 					{
 						if (lineinfo.backuphtml)
 						{
 							lineinfo.html = lineinfo.backuphtml;
-							lineinfo.bgborder = "1 0xffffff 0.20";
+							lineinfo.bgborder = "1 0xffffff 0.22";
 							lineinfo.bgcolor = 0x0f172a;
 							lineinfo.backuphtml = null;
 						}
@@ -661,8 +658,8 @@
 					{
 						lineinfo.backuphtml = lineinfo.html;
 						lineinfo.html = lineinfo.deletehtml;
-						lineinfo.bgborder = "1 0xff4d4f 0.65";
-						lineinfo.bgcolor = 0x221115;
+						lineinfo.bgborder = "1 0xff4d4f 0.70";
+						lineinfo.bgcolor = 0x221116;
 					}
 				}
 
@@ -671,7 +668,7 @@
 					if (lineinfo.backuphtml)
 					{
 						lineinfo.html = lineinfo.backuphtml;
-						lineinfo.bgborder = "1 0xffffff 0.20";
+						lineinfo.bgborder = "1 0xffffff 0.22";
 						lineinfo.bgcolor = 0x0f172a;
 						lineinfo.backuphtml = null;
 					}
