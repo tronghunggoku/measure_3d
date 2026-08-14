@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<krpano title="Virtual Tour" version="1.23">
+  <!-- <include url="FloorPlan/xml/floorplan_SM.xml" /> -->
+
+  <display depthmaprendermode="3dmodel" />
+  <display depthbuffer="true" />
+  <action autorun="onstart" name="startup">
+    loadscene(get(scene[0].name),null,null,BLEND(0.5));
+    set(view.tx,get(image.ox));
+    set(view.ty,get(image.oy));
+    set(view.tz,get(image.oz));
+    js(readyAddScene());
+  </action>
+
+	<include url="%VIEWER%/plugins/webvr.xml" />
+	
+	<!-- overwrite/redesign the default Enter VR button from the webvr.xml -->
+	<layer name="webvr_enterbutton" keep="true"
+		url="icon_vr.png"
+		scale="0.08" scalechildren="false" align="leftbottom" x="18" y="18" alpha="1.0"
+		onclick.addevent="set(display.anaglyph,false);"
+		/>
+
+	<layer name="webvr_enterbutton_infotext" keep="true" devices="normal"
+		parent="webvr_enterbutton"
+		type="text" css="color:#FFFFFF;font-size:10px;line-height:12px;" bg="false" txtshadow="0 1 4 0x000000 1.0"
+		html="Enter[br]VR Mode"
+		align="lefttop" x="45" y="8" capture="false"
+		/>
+    
+	<style name="polyspot"
+		capture="false"
+		borderwidth="0"
+		alpha="0"
+		onover="if(webvr.isenabled == false, tween(alpha,0.3));"
+		onout="tween(alpha,0);"
+		onclick="loadscene(get(linkedscene),null,MERGE|PRELOAD|KEEPMOVING,COLORBLEND(2.0, 0x000000, easeOutSine));"
+		/>
+
+
+  <scene model="true" name="scene_008" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/8.tiles/thumb.jpg" title="scene8" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="180.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/8.tiles/preview.jpg" />
+    <image ox="91.79" oy="-319.83" oz="1696.3" origin="-0.92, 3.2, -16.96"
+      align="-0.0|180.1|0.0"
+      prealign="-0.0|-180.1|0.0" style="jypano_008">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/8.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/8.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_008" name="jypano_008" ox="91.79" oy="-319.83" oz="1696.3" />
+
+  <scene model="true" name="scene_001" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/1.tiles/thumb.jpg" title="scene1" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/1.tiles/preview.jpg" />
+    <image ox="208.46" oy="-209.26" oz="-1429.63" origin="-0.78, 2.09, 14.3" align="0.0|177.5|0.0"
+      prealign="-0.0|-177.5|-0.0" style="jypano_001">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/1.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/1.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_001" name="jypano_001" ox="208.46" oy="-209.26" oz="-1429.63" />
+
+  <scene model="true" name="scene_002" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/2.tiles/thumb.jpg" title="scene1" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/2.tiles/preview.jpg" />
+    <image ox="-244.42" oy="-343.16" oz="-1046.96" origin="2.44, 3.43, 10.47" align="0.0|179.8|0.0"
+      prealign="-0.0|-179.8|-0.0" style="jypano_002">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/2.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/2.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_002" name="jypano_002" ox="-244.42" oy="-343.16" oz="-1046.96" />
+
+  <scene model="true" name="scene_003" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/3.tiles/thumb.jpg" title="scene2" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="90.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/3.tiles/preview.jpg" />
+    <image ox="10.75" oy="-339.86" oz="-622.45" origin="-0.11, 3.4, 6.22"
+      align="0.0|177.8|0.0" prealign="-0.0|-177.8|-0.0" style="jypano_003">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/3.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/3.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_003" name="jypano_003" ox="10.75" oy="-339.86" oz="-622.45" />
+
+  <scene model="true" name="scene_004" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/4.tiles/thumb.jpg" title="scene3" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/4.tiles/preview.jpg" />
+    <image ox="225.08" oy="-339.86" oz="-264.93" origin="-2.25, 3.4, 2.65"
+      align="-0.0|181.2|0.0" prealign="-0.0|-181.2|0.0" style="jypano_004">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/4.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/4.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_004" name="jypano_004" ox="225.08" oy="-339.86" oz="-264.93" />
+
+  <scene model="true" name="scene_005" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/5.tiles/thumb.jpg" title="scene4" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/5.tiles/preview.jpg" />
+    <image ox="10.75" oy="-339.86" oz="299.37" origin="-0.11, 3.4, -2.99"
+      align="-0.0|181.2|0.0" prealign="-0.0|-181.2|0.0" style="jypano_005">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/5.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/5.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_005" name="jypano_005" ox="10.75" oy="-339.86" oz="299.37" />
+
+
+  <scene model="true" name="scene_006" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/6.tiles/thumb.jpg" title="scene6" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/6.tiles/preview.jpg" />
+    <image ox="-15.24" oy="-331.68" oz="881.69" origin="0.15, 3.32, -8.82"
+      align="-0.0|180.1|0.0"
+      prealign="-0.0|-180.1|0.0" style="jypano_006">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/6.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/6.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_006" name="jypano_006" ox="-15.24" oy="-331.68" oz="881.69" />
+
+  <scene model="true" name="scene_007" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/7.tiles/thumb.jpg" title="scene7" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/7.tiles/preview.jpg" />
+    <image ox="-172.41" oy="-331.68" oz="1485.8" origin="1.72, 3.32, -14.86"
+      align="-0.0|180.1|0.0"
+      prealign="-0.0|-180.1|0.0" style="jypano_007">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/7.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/7.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_007" name="jypano_007" ox="-172.41" oy="-331.68" oz="1485.8" />
+
+
+  <scene model="true" name="scene_009" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/9.tiles/thumb.jpg" title="scene9" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/9.tiles/preview.jpg" />
+    <image ox="23.36" oy="-366.06" oz="-392.81" origin="-0.23, 3.66, 3.93"
+      align="-1.0|177.97|-2.0"
+      prealign="2.0|-178.0|1.0" style="jypano_007">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/9.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/9.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_009" name="jypano_009" ox="23.36" oy="-366.06" oz="-392.81" />
+
+
+  <scene model="true" name="scene_010" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/10.tiles/thumb.jpg" title="scene10" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/10.tiles/preview.jpg" />
+    <image ox="-236.89" oy="-363.18" oz="-534.16" origin="2.37, 3.63, 5.34"
+      align="0.0|175.5|0.0"
+      prealign="-0.0|-175.5|-0.0" style="jypano_010">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/10.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/10.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_010" name="jypano_010" ox="-236.89" oy="-363.18" oz="-534.16" />
+
+
+  <scene model="true" name="scene_011" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/11.tiles/thumb.jpg" title="scene11" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/11.tiles/preview.jpg" />
+    <image ox="-118.42" oy="-363.18" oz="-83.31" origin="1.18, 3.63, 0.83"
+      align="0.0|177.0|-1.0"
+      prealign="1.0|-177.0|-0.0" style="jypano_011">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/11.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/11.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_011" name="jypano_011" ox="-118.42" oy="-363.18" oz="-83.31" />
+
+
+  <scene model="true" name="scene_012" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/12.tiles/thumb.jpg" title="scene12" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/12.tiles/preview.jpg" />
+    <image ox="145.7" oy="-367.77" oz="-79.64" origin="-1.46, 3.68, 0.8"
+      align="-0.0|180.0|-1.5"
+      prealign="1.5|-180.0|0.0" style="jypano_012">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/12.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/12.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_012" name="jypano_012" ox="145.7" oy="-367.77" oz="-79.64" />
+
+  <scene model="true" name="scene_013" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/13.tiles/thumb.jpg" title="scene13" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/13.tiles/preview.jpg" />
+    <image ox="9.78" oy="-364.57" oz="271.43" origin="-0.1, 3.65, -2.71"
+      align="0.0|178.7|0.0"
+      prealign="-0.0|-178.7|-0.0" style="jypano_013">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/13.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/13.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_014" name="jypano_014" ox="9.78" oy="-364.57" oz="271.43" />
+  <scene model="true" name="scene_014" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/14.tiles/thumb.jpg" title="scene14" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/14.tiles/preview.jpg" />
+    <image ox="44.32" oy="-362.93" oz="741.57" origin="-0.44, 3.63, -7.42"
+      align="0.0|175.7|-1.2"
+      prealign="1.2|-175.7|-0.0" style="jypano_014">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/14.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/14.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_014" name="jypano_014" ox="44.32" oy="-362.93" oz="741.57" />
+
+
+  <scene model="true" name="scene_015" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/15.tiles/thumb.jpg" title="scene15" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/15.tiles/preview.jpg" />
+    <image ox="-149.55" oy="-347.81" oz="1336.37" origin="1.5, 3.48, -13.36"
+      align="0.0|177.5|0.0"
+      prealign="-0.0|-177.5|-0.0" style="jypano_015">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/15.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/15.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_015" name="jypano_015" ox="-149.55" oy="-347.81" oz="1336.37" />
+
+
+  <scene model="true" name="scene_016" onstart="showFlootHotspot();"
+    thumburl="%HTMLPATH%/panos/16.tiles/thumb.jpg" title="scene16" type="panorama">
+    <control bouncinglimits="calc:image.cube ? true : false" />
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+    <preview url="%HTMLPATH%/panos/16.tiles/preview.jpg" />
+    <image ox="205.11" oy="-351.98" oz="1003.46" origin="-2.05, 3.52, -10.03"
+      align="0.0|177.8|-2.0"
+      prealign="2.0|-177.8|-0.0" style="jypano_016">
+      <cube multires="512,640,1152,2304,4736"
+        url="%HTMLPATH%/panos/16.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+      <depthmap url="%HTMLPATH%/panos/16.tiles/model.stl" enabled="true" rendermode="3dmodel"
+        background="none" scale="100" offset="0.0" subdiv="" hittest="true" />
+    </image>
+  </scene>
+  <style linkedscene="scene_016" name="jypano_016" ox="205.11" oy="-351.98" oz="1003.46" />
+  <!-- <scene
+    name="scene_1" title="1" onstart="" thumburl="panos/1.tiles/thumb.jpg" lat="" lng="" alt=""
+    heading="">
+
+    <control bouncinglimits="calc:image.cube ? true : false" />
+
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+      fovmax="140" limitview="auto" />
+
+    <preview url="panos/1.tiles/preview.jpg" />
+
+    <image ox="737.067" oy="-163.144" oz="234.246" origin="-7.371, 1.631, -2.342"
+      align="-0.0|270.0|0.0" prealign="-0.0|-270.0|0.0" style="jypano_1">
+      <cube url="panos/1.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4736" />
+    </image>
+
+  </scene> -->
+
+
+</krpano>

@@ -1,0 +1,42 @@
+      "relevanceOverride": {
+        "scene_2_studio": {
+          "tx": 352.49,
+          "ty": -60.79,
+          "tz": -233.45,
+          "height": 270.0
+        },
+        "scene_4_studio": {
+          "tx": 760.12,
+          "ty": -60.79,
+          "tz": 192.1,
+          "height": 270.0
+        },
+        "scene_8_studio": {
+          "tx": -405.79,
+          "ty": -60.79,
+          "tz": -584.67,
+          "height": 270.0
+        }
+      },
+
+
+            "relevanceOverride": {
+        "scene_2_studio": {
+          "tx": 52.49,
+          "ty": -60.79,
+          "tz": -283.45,
+          "height": 270.0
+        },
+        "scene_3_studio": {
+          "tx": -450.06,
+          "ty": -57.86,
+          "tz": 46.46,
+          "height": 270.0
+        },
+        "scene_5_studio": {
+          "tx": 243.79,
+          "ty": -60.79,
+          "tz": 1142.48,
+          "height": 270.0
+        }
+      },

@@ -1,0 +1,152 @@
+[
+  {
+    "id": "1",
+    "name": "Căn 1 Phòng Ngủ",
+    "name_en": "1 Bedroom",
+    "areaInfo": "DIỆN TÍCH XÂY DỰNG: 46,6m²<br>DIỆN TÍCH SỬ DỤNG: 41,6m²",
+    "areaInfo_en": "GROSS FLOOR AREA: 46,6m²<br>NET USAGE AREA: 41,6m²",
+    "url": "plugins/jy-ui/img/1pn.png",
+    "type": 1,
+    "isuse": true,
+    "distance": 1200,
+    "position": {
+      "bottom": "22px",
+      "left": "20px"
+    },
+    "theme": {
+      "backgroundColor": "#F16A24",
+      "textColor": "#FFFFFF",
+      "borderRadius": "16px",
+      "scaleZoom": 1.4
+    },
+    "pointSize": 10,
+    "radar": {
+      "size": 80,
+      "color": "rgba(255, 127, 61, 1.0)",
+      "fov": 90
+    },
+    "openButton": {
+      "position": {
+        "bottom": "22px",
+        "left": "20px"
+      },
+      "size": "40px",
+      "backgroundColor": "#34513C",
+      "iconColor": "#F5DEA4"
+    },
+    "mobile": {
+      "position": {
+        "top": "auto",
+        "bottom": "10px",
+        "right": "auto",
+        "left": "10px"
+      },
+      "mapWidth": 148,
+      "mapHeight": 200,
+      "pointSize": 6,
+      "radar": {
+        "size": 36,
+        "color": "rgba(255, 127, 61, 1.0)"
+      },
+      "theme": {
+        "borderRadius": "12px",
+        "scaleZoom": 2
+      },
+      "openButton": {
+        "position": {
+          "top": "auto",
+          "bottom": "10px",
+          "right": "auto",
+          "left": "10px"
+        },
+        "size": "34px"
+      }
+    },
+    "mapWidth": 230,
+    "mapHeight": 350,
+    "showSandTable": true,
+    "nameColor": "#FFFFFF",
+    "points": [
+      {
+        "sceneName": "scene_1_1pn",
+        "title": "Phòng Bếp & Ăn",
+        "title_en": "Kitchen & Dining",
+        "left": 61,
+        "top": 70,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_2_1pn",
+        "title": "Phòng Bếp & Ăn",
+        "title_en": "Kitchen & Dining",
+        "left": 62,
+        "top": 56,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_3_1pn",
+        "title": "Phòng Bếp & Ăn",
+        "title_en": "Kitchen & Dining",
+        "left": 62,
+        "top": 46,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_4_1pn",
+        "title": "Phòng Khách",
+        "title_en": "Living Room",
+        "left": 62,
+        "top": 40,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_5_1pn",
+        "title": "Phòng Khách",
+        "title_en": "Living Room",
+        "left": 58,
+        "top": 32,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_6_1pn",
+        "title": "Logia",
+        "title_en": "Loggia",
+        "left": 66,
+        "top": 14,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_7_1pn",
+        "title": "Phòng Ngủ",
+        "title_en": "Bedroom",
+        "left": 37,
+        "top": 17,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_8_1pn",
+        "title": "Phòng Ngủ",
+        "title_en": "Bedroom",
+        "left": 43,
+        "top": 40,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_9_1pn",
+        "title": "Phòng Ngủ +",
+        "title_en": "Bedroom +",
+        "left": 31,
+        "top": 57,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_10_1pn",
+        "title": "WC",
+        "title_en": "WC",
+        "left": 31,
+        "top": 75,
+        "rotate": 0
+      }
+    ]
+  }
+]

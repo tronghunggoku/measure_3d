@@ -1,0 +1,1669 @@
+{
+  "coordinate": [
+    {
+      "name": "scene_1_1pn",
+      "position": {
+        "ox": 649.39,
+        "oy": -1049.13,
+        "oz": -2516.8,
+        "height": 1010.0
+      }
+    },
+    {
+      "name": "scene_2_1pn",
+      "position": {
+        "ox": 621.51,
+        "oy": -1049.13,
+        "oz": -1755.97,
+        "height": 1010.0
+      }
+    },
+    {
+      "name": "scene_3_1pn",
+      "position": {
+        "ox": 606.26,
+        "oy": -1049.13,
+        "oz": -1201.12,
+        "height": 1010.0
+      }
+    },
+    {
+      "name": "scene_4_1pn",
+      "position": {
+        "ox": 648.07,
+        "oy": -1049.13,
+        "oz": -753.72,
+        "height": 1010.0
+      }
+    },
+    {
+      "name": "scene_5_1pn",
+      "position": {
+        "ox": 703.58,
+        "oy": -1049.13,
+        "oz": 65.97,
+        "height": 1010.0
+      }
+    },
+    {
+      "name": "scene_6_1pn",
+      "position": {
+        "ox": 918.13,
+        "oy": -1023.5,
+        "oz": 1643.33,
+        "height": 980.0
+      }
+    },
+    {
+      "name": "scene_7_1pn",
+      "position": {
+        "ox": -842.24,
+        "oy": -1049.13,
+        "oz": 1467.18,
+        "height": 1010.0
+      }
+    },
+    {
+      "name": "scene_8_1pn",
+      "position": {
+        "ox": -488.26,
+        "oy": -1049.13,
+        "oz": -189.36,
+        "height": 1010.0
+      }
+    },
+    {
+      "name": "scene_9_1pn",
+      "position": {
+        "ox": -331.61,
+        "oy": -1049.13,
+        "oz": -1841.27,
+        "height": 1010.0
+      }
+    },
+    {
+      "name": "scene_10_1pn",
+      "position": {
+        "ox": -734.13,
+        "oy": -1049.13,
+        "oz": -2740.36,
+        "height": 1010.0
+      }
+    },
+    {
+      "name": "dollhouse",
+      "position": {
+        "ox": 0,
+        "oy": 0,
+        "oz": 0,
+        "height": 1010.0
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "sandTableSet": {
+        "sandTableId": "1"
+      },
+      "nameDisplay": {
+        "borderColor": "#34AEE7",
+        "bgColor": "#575757",
+        "fontColorOpacity": 100,
+        "size": 1,
+        "bgColorOpacity": 30,
+        "time": "4",
+        "borderColorOpacity": 30,
+        "fontColor": "#34AEE7",
+        "entryMode": 0
+      },
+      "videoSet": {
+        "startScene": "",
+        "isHotSpotSynchronous": false,
+        "isShowPlaybackProgress": false,
+        "overType": 1,
+        "endScene": "",
+        "isAutoPlay": false,
+        "isImplantSynchronous": false,
+        "type": 1
+      },
+      "shade": {
+        "skyShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "floorShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "sceneId": 1
+      },
+      "title": "scene_1_1pn",
+      "type": 1,
+      "captions": {
+        "bgColor": "#505050",
+        "fontColorOpacity": 100,
+        "linkPath": "",
+        "bgColorOpacity": 30,
+        "content": "",
+        "fontColor": "#FFFFFF",
+        "speed": 0,
+        "openType": 1
+      },
+      "content": "<view fov=\"95.0\" fovmax=\"120.0\" fovmin=\"70.0\" fovtype=\"MFOV\" hlookat=\"0\" limitview=\"lookat\" vlookat=\"0\" hlookatmin=\"-180\" hlookatmax=\"180\" vlookatmin=\"-90\" vlookatmax=\"90\" isCheck=\"false\" />\n<preview url=\"panos/1_1pn.tiles/preview.jpg\" />\n<image style=\"jypano_1_1pn\">\n <cube multires=\"512,640,1152,2304,4736\" url=\"panos/1_1pn.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg\" />\n <depthmap enabled=\"true\" hittest=\"true\" subdiv=\"10000\" scale=\"100\" url=\"panos/1_1pn.tiles/model.stl\" />\n</image>",
+      "relevance": [
+        "scene_2_1pn",
+        "scene_3_1pn",
+        "scene_4_1pn",
+        "scene_5_1pn",
+        "scene_10_1pn",
+        "scene_9_1pn"
+      ],
+      "videoPreview": "",
+      "isHide": false,
+      "view": {
+        "isCheck": false,
+        "vlookat": "0",
+        "fovmin": 70.0,
+        "hlookatmax": "180",
+        "fovmax": 120.0,
+        "hlookatmin": -180,
+        "vlookatmin": -90,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": 95.0,
+        "type": 1,
+        "vlookatmax": 90
+      },
+      "videoUrl": "",
+      "compass": {
+        "vlookat": "0",
+        "size": 100,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": "0",
+        "isOpenCompass": false
+      },
+      "name": "scene_1_1pn",
+      "model": {
+        "date": "2026-01-26T12:00:00",
+        "modelUrl": "panos/1_1pn.tiles/model.stl"
+      },
+      "audio": {
+        "explain": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        },
+        "sceneId": 1,
+        "bgm": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        }
+      },
+      "id": 1,
+      "position": {
+        "tx": 649.39,
+        "ty": -1049.13,
+        "tz": -2516.8,
+        "oy": 160.0,
+        "height": 1010.0
+      },
+      "thumburl": "panos/1_1pn.tiles/thumb.jpg"
+    },
+    {
+      "sandTableSet": {
+        "sandTableId": "1"
+      },
+      "nameDisplay": {
+        "borderColor": "#34AEE7",
+        "bgColor": "#575757",
+        "fontColorOpacity": 100,
+        "size": 1,
+        "bgColorOpacity": 30,
+        "time": "4",
+        "borderColorOpacity": 30,
+        "fontColor": "#34AEE7",
+        "entryMode": 0
+      },
+      "videoSet": {
+        "startScene": "",
+        "isHotSpotSynchronous": false,
+        "isShowPlaybackProgress": false,
+        "overType": 1,
+        "endScene": "",
+        "isAutoPlay": false,
+        "isImplantSynchronous": false,
+        "type": 1
+      },
+      "shade": {
+        "skyShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "floorShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "sceneId": 2
+      },
+      "title": "scene_2_1pn",
+      "type": 1,
+      "captions": {
+        "bgColor": "#505050",
+        "fontColorOpacity": 100,
+        "linkPath": "",
+        "bgColorOpacity": 30,
+        "content": "",
+        "fontColor": "#FFFFFF",
+        "speed": 0,
+        "openType": 1
+      },
+      "content": "<view fov=\"95.0\" fovmax=\"120.0\" fovmin=\"70.0\" fovtype=\"MFOV\" hlookat=\"0\" limitview=\"lookat\" vlookat=\"0\" hlookatmin=\"-180\" hlookatmax=\"180\" vlookatmin=\"-90\" vlookatmax=\"90\" isCheck=\"false\" />\n<preview url=\"panos/2_1pn.tiles/preview.jpg\" />\n<image style=\"jypano_2_1pn\">\n <cube multires=\"512,640,1152,2304,4736\" url=\"panos/2_1pn.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg\" />\n <depthmap enabled=\"true\" hittest=\"true\" subdiv=\"10000\" scale=\"100\" url=\"panos/2_1pn.tiles/model.stl\" />\n</image>",
+      "relevance": [
+        "scene_1_1pn",
+        "scene_3_1pn",
+        "scene_9_1pn",
+        "scene_4_1pn",
+        "scene_5_1pn",
+        "scene_8_1pn"
+      ],
+      "relevanceOverride": {
+        "scene_8_1pn": {
+          "tx": -188.26,
+          "ty": -1049.13,
+          "tz": -189.36,
+          "oy": 160.0,
+          "height": 1010.0
+        }
+      },
+      "videoPreview": "",
+      "isHide": false,
+      "view": {
+        "isCheck": false,
+        "vlookat": "0",
+        "fovmin": 70.0,
+        "hlookatmax": "180",
+        "fovmax": 120.0,
+        "hlookatmin": -180,
+        "vlookatmin": -90,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": 95.0,
+        "type": 1,
+        "vlookatmax": 90
+      },
+      "videoUrl": "",
+      "compass": {
+        "vlookat": "0",
+        "size": 100,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": "0",
+        "isOpenCompass": false
+      },
+      "name": "scene_2_1pn",
+      "model": {
+        "date": "2026-01-26T12:00:00",
+        "modelUrl": "panos/2_1pn.tiles/model.stl"
+      },
+      "audio": {
+        "explain": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        },
+        "sceneId": 2,
+        "bgm": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        }
+      },
+      "id": 2,
+      "position": {
+        "tx": 621.51,
+        "ty": -1049.13,
+        "tz": -1755.97,
+        "oy": 160.0,
+        "height": 1010.0
+      },
+      "thumburl": "panos/2_1pn.tiles/thumb.jpg"
+    },
+    {
+      "sandTableSet": {
+        "sandTableId": "1"
+      },
+      "nameDisplay": {
+        "borderColor": "#34AEE7",
+        "bgColor": "#575757",
+        "fontColorOpacity": 100,
+        "size": 1,
+        "bgColorOpacity": 30,
+        "time": "4",
+        "borderColorOpacity": 30,
+        "fontColor": "#34AEE7",
+        "entryMode": 0
+      },
+      "videoSet": {
+        "startScene": "",
+        "isHotSpotSynchronous": false,
+        "isShowPlaybackProgress": false,
+        "overType": 1,
+        "endScene": "",
+        "isAutoPlay": false,
+        "isImplantSynchronous": false,
+        "type": 1
+      },
+      "shade": {
+        "skyShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "floorShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "sceneId": 3
+      },
+      "title": "scene_3_1pn",
+      "type": 1,
+      "captions": {
+        "bgColor": "#505050",
+        "fontColorOpacity": 100,
+        "linkPath": "",
+        "bgColorOpacity": 30,
+        "content": "",
+        "fontColor": "#FFFFFF",
+        "speed": 0,
+        "openType": 1
+      },
+      "content": "<view fov=\"95.0\" fovmax=\"120.0\" fovmin=\"70.0\" fovtype=\"MFOV\" hlookat=\"0\" limitview=\"lookat\" vlookat=\"0\" hlookatmin=\"-180\" hlookatmax=\"180\" vlookatmin=\"-90\" vlookatmax=\"90\" isCheck=\"false\" />\n<preview url=\"panos/3_1pn.tiles/preview.jpg\" />\n<image style=\"jypano_3_1pn\">\n <cube multires=\"512,640,1152,2304,4736\" url=\"panos/3_1pn.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg\" />\n <depthmap enabled=\"true\" hittest=\"true\" subdiv=\"10000\" scale=\"100\" url=\"panos/3_1pn.tiles/model.stl\" />\n</image>",
+      "relevance": [
+        "scene_1_1pn",
+        "scene_2_1pn",
+        "scene_9_1pn",
+        "scene_4_1pn",
+        "scene_5_1pn",
+        "scene_8_1pn"
+      ],
+      "videoPreview": "",
+      "isHide": false,
+      "view": {
+        "isCheck": false,
+        "vlookat": "0",
+        "fovmin": 70.0,
+        "hlookatmax": "180",
+        "fovmax": 120.0,
+        "hlookatmin": -180,
+        "vlookatmin": -90,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": 95.0,
+        "type": 1,
+        "vlookatmax": 90
+      },
+      "videoUrl": "",
+      "compass": {
+        "vlookat": "0",
+        "size": 100,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": "0",
+        "isOpenCompass": false
+      },
+      "name": "scene_3_1pn",
+      "model": {
+        "date": "2026-01-26T12:00:00",
+        "modelUrl": "panos/3_1pn.tiles/model.stl"
+      },
+      "audio": {
+        "explain": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        },
+        "sceneId": 3,
+        "bgm": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        }
+      },
+      "id": 3,
+      "position": {
+        "tx": 606.26,
+        "ty": -1049.13,
+        "tz": -1201.12,
+        "oy": 160.0,
+        "height": 1010.0
+      },
+      "thumburl": "panos/3_1pn.tiles/thumb.jpg"
+    },
+    {
+      "sandTableSet": {
+        "sandTableId": "1"
+      },
+      "nameDisplay": {
+        "borderColor": "#34AEE7",
+        "bgColor": "#575757",
+        "fontColorOpacity": 100,
+        "size": 1,
+        "bgColorOpacity": 30,
+        "time": "4",
+        "borderColorOpacity": 30,
+        "fontColor": "#34AEE7",
+        "entryMode": 0
+      },
+      "videoSet": {
+        "startScene": "",
+        "isHotSpotSynchronous": false,
+        "isShowPlaybackProgress": false,
+        "overType": 1,
+        "endScene": "",
+        "isAutoPlay": false,
+        "isImplantSynchronous": false,
+        "type": 1
+      },
+      "shade": {
+        "skyShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "floorShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "sceneId": 4
+      },
+      "title": "scene_4_1pn",
+      "type": 1,
+      "captions": {
+        "bgColor": "#505050",
+        "fontColorOpacity": 100,
+        "linkPath": "",
+        "bgColorOpacity": 30,
+        "content": "",
+        "fontColor": "#FFFFFF",
+        "speed": 0,
+        "openType": 1
+      },
+      "content": "<view fov=\"95.0\" fovmax=\"120.0\" fovmin=\"70.0\" fovtype=\"MFOV\" hlookat=\"0\" limitview=\"lookat\" vlookat=\"0\" hlookatmin=\"-180\" hlookatmax=\"180\" vlookatmin=\"-90\" vlookatmax=\"90\" isCheck=\"false\" />\n<preview url=\"panos/4_1pn.tiles/preview.jpg\" />\n<image style=\"jypano_4_1pn\">\n <cube multires=\"512,640,1152,2304,4736\" url=\"panos/4_1pn.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg\" />\n <depthmap enabled=\"true\" hittest=\"true\" subdiv=\"10000\" scale=\"100\" url=\"panos/4_1pn.tiles/model.stl\" />\n</image>",
+      "relevance": [
+        "scene_1_1pn",
+        "scene_2_1pn",
+        "scene_9_1pn",
+        "scene_3_1pn",
+        "scene_5_1pn",
+        "scene_8_1pn"
+      ],
+      "videoPreview": "",
+      "isHide": false,
+      "view": {
+        "isCheck": false,
+        "vlookat": "0",
+        "fovmin": 70.0,
+        "hlookatmax": "180",
+        "fovmax": 120.0,
+        "hlookatmin": -180,
+        "vlookatmin": -90,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": 95.0,
+        "type": 1,
+        "vlookatmax": 90
+      },
+      "videoUrl": "",
+      "compass": {
+        "vlookat": "0",
+        "size": 100,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": "0",
+        "isOpenCompass": false
+      },
+      "name": "scene_4_1pn",
+      "model": {
+        "date": "2026-01-26T12:00:00",
+        "modelUrl": "panos/4_1pn.tiles/model.stl"
+      },
+      "audio": {
+        "explain": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        },
+        "sceneId": 4,
+        "bgm": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        }
+      },
+      "id": 4,
+      "position": {
+        "tx": 648.07,
+        "ty": -1049.13,
+        "tz": -753.72,
+        "oy": 160.0,
+        "height": 1010.0
+      },
+      "thumburl": "panos/4_1pn.tiles/thumb.jpg"
+    },
+    {
+      "sandTableSet": {
+        "sandTableId": "1"
+      },
+      "nameDisplay": {
+        "borderColor": "#34AEE7",
+        "bgColor": "#575757",
+        "fontColorOpacity": 100,
+        "size": 1,
+        "bgColorOpacity": 30,
+        "time": "4",
+        "borderColorOpacity": 30,
+        "fontColor": "#34AEE7",
+        "entryMode": 0
+      },
+      "videoSet": {
+        "startScene": "",
+        "isHotSpotSynchronous": false,
+        "isShowPlaybackProgress": false,
+        "overType": 1,
+        "endScene": "",
+        "isAutoPlay": false,
+        "isImplantSynchronous": false,
+        "type": 1
+      },
+      "shade": {
+        "skyShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "floorShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "sceneId": 5
+      },
+      "title": "scene_5_1pn",
+      "type": 1,
+      "captions": {
+        "bgColor": "#505050",
+        "fontColorOpacity": 100,
+        "linkPath": "",
+        "bgColorOpacity": 30,
+        "content": "",
+        "fontColor": "#FFFFFF",
+        "speed": 0,
+        "openType": 1
+      },
+      "content": "<view fov=\"95.0\" fovmax=\"120.0\" fovmin=\"70.0\" fovtype=\"MFOV\" hlookat=\"0\" limitview=\"lookat\" vlookat=\"0\" hlookatmin=\"-180\" hlookatmax=\"180\" vlookatmin=\"-90\" vlookatmax=\"90\" isCheck=\"false\" />\n<preview url=\"panos/5_1pn.tiles/preview.jpg\" />\n<image style=\"jypano_5_1pn\">\n <cube multires=\"512,640,1152,2304,4736\" url=\"panos/5_1pn.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg\" />\n <depthmap enabled=\"true\" hittest=\"true\" subdiv=\"10000\" scale=\"100\" url=\"panos/5_1pn.tiles/model.stl\" />\n</image>",
+      "relevance": [
+        "scene_1_1pn",
+        "scene_2_1pn",
+        "scene_4_1pn",
+        "scene_3_1pn",
+        "scene_6_1pn",
+        "scene_8_1pn"
+      ],
+      "relevanceOverride": {
+        "scene_8_1pn": {
+          "tx": -288.26,
+          "ty": -1049.13,
+          "tz": -489.36,
+          "oy": 160.0,
+          "height": 1010.0
+        }
+      },
+      "videoPreview": "",
+      "isHide": false,
+      "view": {
+        "isCheck": false,
+        "vlookat": "0",
+        "fovmin": 70.0,
+        "hlookatmax": "180",
+        "fovmax": 120.0,
+        "hlookatmin": -180,
+        "vlookatmin": -90,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": 95.0,
+        "type": 1,
+        "vlookatmax": 90
+      },
+      "videoUrl": "",
+      "compass": {
+        "vlookat": "0",
+        "size": 100,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": "0",
+        "isOpenCompass": false
+      },
+      "name": "scene_5_1pn",
+      "model": {
+        "date": "2026-01-26T12:00:00",
+        "modelUrl": "panos/5_1pn.tiles/model.stl"
+      },
+      "audio": {
+        "explain": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        },
+        "sceneId": 5,
+        "bgm": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        }
+      },
+      "id": 5,
+      "position": {
+        "tx": 703.58,
+        "ty": -1049.13,
+        "tz": 65.97,
+        "oy": 160.0,
+        "height": 1010.0
+      },
+      "thumburl": "panos/5_1pn.tiles/thumb.jpg"
+    },
+    {
+      "sandTableSet": {
+        "sandTableId": "1"
+      },
+      "nameDisplay": {
+        "borderColor": "#34AEE7",
+        "bgColor": "#575757",
+        "fontColorOpacity": 100,
+        "size": 1,
+        "bgColorOpacity": 30,
+        "time": "4",
+        "borderColorOpacity": 30,
+        "fontColor": "#34AEE7",
+        "entryMode": 0
+      },
+      "videoSet": {
+        "startScene": "",
+        "isHotSpotSynchronous": false,
+        "isShowPlaybackProgress": false,
+        "overType": 1,
+        "endScene": "",
+        "isAutoPlay": false,
+        "isImplantSynchronous": false,
+        "type": 1
+      },
+      "shade": {
+        "skyShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "floorShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "sceneId": 6
+      },
+      "title": "scene_6_1pn",
+      "type": 1,
+      "captions": {
+        "bgColor": "#505050",
+        "fontColorOpacity": 100,
+        "linkPath": "",
+        "bgColorOpacity": 30,
+        "content": "",
+        "fontColor": "#FFFFFF",
+        "speed": 0,
+        "openType": 1
+      },
+      "content": "<view fov=\"95.0\" fovmax=\"120.0\" fovmin=\"70.0\" fovtype=\"MFOV\" hlookat=\"0\" limitview=\"lookat\" vlookat=\"0\" hlookatmin=\"-180\" hlookatmax=\"180\" vlookatmin=\"-90\" vlookatmax=\"90\" isCheck=\"false\" />\n<preview url=\"panos/6_1pn.tiles/preview.jpg\" />\n<image style=\"jypano_6_1pn\">\n <cube multires=\"512,640,1152,2304,4736\" url=\"panos/6_1pn.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg\" />\n <depthmap enabled=\"true\" hittest=\"true\" subdiv=\"10000\" scale=\"100\" url=\"panos/6_1pn.tiles/model.stl\" />\n</image>",
+      "relevance": [
+        "scene_5_1pn"
+      ],
+      "videoPreview": "",
+      "isHide": false,
+      "view": {
+        "isCheck": false,
+        "vlookat": "0",
+        "fovmin": 70.0,
+        "hlookatmax": "180",
+        "fovmax": 120.0,
+        "hlookatmin": -180,
+        "vlookatmin": -90,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": 95.0,
+        "type": 1,
+        "vlookatmax": 90
+      },
+      "videoUrl": "",
+      "compass": {
+        "vlookat": "0",
+        "size": 100,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": "0",
+        "isOpenCompass": false
+      },
+      "name": "scene_6_1pn",
+      "model": {
+        "date": "2026-01-26T12:00:00",
+        "modelUrl": "panos/6_1pn.tiles/model.stl"
+      },
+      "audio": {
+        "explain": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        },
+        "sceneId": 6,
+        "bgm": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        }
+      },
+      "id": 6,
+      "position": {
+        "tx": 918.13,
+        "ty": -1023.5,
+        "tz": 1643.33,
+        "oy": 160.0,
+        "height": 980.0
+      },
+      "thumburl": "panos/6_1pn.tiles/thumb.jpg"
+    },
+    {
+      "sandTableSet": {
+        "sandTableId": "1"
+      },
+      "nameDisplay": {
+        "borderColor": "#34AEE7",
+        "bgColor": "#575757",
+        "fontColorOpacity": 100,
+        "size": 1,
+        "bgColorOpacity": 30,
+        "time": "4",
+        "borderColorOpacity": 30,
+        "fontColor": "#34AEE7",
+        "entryMode": 0
+      },
+      "videoSet": {
+        "startScene": "",
+        "isHotSpotSynchronous": false,
+        "isShowPlaybackProgress": false,
+        "overType": 1,
+        "endScene": "",
+        "isAutoPlay": false,
+        "isImplantSynchronous": false,
+        "type": 1
+      },
+      "shade": {
+        "skyShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "floorShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "sceneId": 7
+      },
+      "title": "scene_7_1pn",
+      "type": 1,
+      "captions": {
+        "bgColor": "#505050",
+        "fontColorOpacity": 100,
+        "linkPath": "",
+        "bgColorOpacity": 30,
+        "content": "",
+        "fontColor": "#FFFFFF",
+        "speed": 0,
+        "openType": 1
+      },
+      "content": "<view fov=\"95.0\" fovmax=\"120.0\" fovmin=\"70.0\" fovtype=\"MFOV\" hlookat=\"0\" limitview=\"lookat\" vlookat=\"0\" hlookatmin=\"-180\" hlookatmax=\"180\" vlookatmin=\"-90\" vlookatmax=\"90\" isCheck=\"false\" />\n<preview url=\"panos/7_1pn.tiles/preview.jpg\" />\n<image style=\"jypano_7_1pn\">\n <cube multires=\"512,640,1152,2304,4736\" url=\"panos/7_1pn.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg\" />\n <depthmap enabled=\"true\" hittest=\"true\" subdiv=\"10000\" scale=\"100\" url=\"panos/7_1pn.tiles/model.stl\" />\n</image>",
+      "relevance": [
+        "scene_8_1pn"
+      ],
+      "relevanceOverride": {
+        "scene_8_1pn": {
+          "tx": -188.26,
+          "ty": -1049.13,
+          "tz": -189.36,
+          "oy": 160.0,
+          "height": 1010.0
+        }
+      },
+      "videoPreview": "",
+      "isHide": false,
+      "view": {
+        "isCheck": false,
+        "vlookat": "0",
+        "fovmin": 70.0,
+        "hlookatmax": "180",
+        "fovmax": 120.0,
+        "hlookatmin": -180,
+        "vlookatmin": -90,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": 95.0,
+        "type": 1,
+        "vlookatmax": 90
+      },
+      "videoUrl": "",
+      "compass": {
+        "vlookat": "0",
+        "size": 100,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": "0",
+        "isOpenCompass": false
+      },
+      "name": "scene_7_1pn",
+      "model": {
+        "date": "2026-01-26T12:00:00",
+        "modelUrl": "panos/7_1pn.tiles/model.stl"
+      },
+      "audio": {
+        "explain": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        },
+        "sceneId": 7,
+        "bgm": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        }
+      },
+      "id": 7,
+      "position": {
+        "tx": -842.24,
+        "ty": -1049.13,
+        "tz": 1467.18,
+        "oy": 160.0,
+        "height": 1010.0
+      },
+      "thumburl": "panos/7_1pn.tiles/thumb.jpg"
+    },
+    {
+      "sandTableSet": {
+        "sandTableId": "1"
+      },
+      "nameDisplay": {
+        "borderColor": "#34AEE7",
+        "bgColor": "#575757",
+        "fontColorOpacity": 100,
+        "size": 1,
+        "bgColorOpacity": 30,
+        "time": "4",
+        "borderColorOpacity": 30,
+        "fontColor": "#34AEE7",
+        "entryMode": 0
+      },
+      "videoSet": {
+        "startScene": "",
+        "isHotSpotSynchronous": false,
+        "isShowPlaybackProgress": false,
+        "overType": 1,
+        "endScene": "",
+        "isAutoPlay": false,
+        "isImplantSynchronous": false,
+        "type": 1
+      },
+      "shade": {
+        "skyShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "floorShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "sceneId": 8
+      },
+      "title": "scene_8_1pn",
+      "type": 1,
+      "captions": {
+        "bgColor": "#505050",
+        "fontColorOpacity": 100,
+        "linkPath": "",
+        "bgColorOpacity": 30,
+        "content": "",
+        "fontColor": "#FFFFFF",
+        "speed": 0,
+        "openType": 1
+      },
+      "content": "<view fov=\"95.0\" fovmax=\"120.0\" fovmin=\"70.0\" fovtype=\"MFOV\" hlookat=\"0\" limitview=\"lookat\" vlookat=\"0\" hlookatmin=\"-180\" hlookatmax=\"180\" vlookatmin=\"-90\" vlookatmax=\"90\" isCheck=\"false\" />\n<preview url=\"panos/8_1pn.tiles/preview.jpg\" />\n<image style=\"jypano_8_1pn\">\n <cube multires=\"512,640,1152,2304,4736\" url=\"panos/8_1pn.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg\" />\n <depthmap enabled=\"true\" hittest=\"true\" subdiv=\"10000\" scale=\"100\" url=\"panos/8_1pn.tiles/model.stl\" />\n</image>",
+      "relevance": [
+        "scene_4_1pn",
+        "scene_7_1pn"
+      ],
+      "relevanceOverride": {
+        "scene_7_1pn": {
+          "tx": -442.24,
+          "ty": -1049.13,
+          "tz": 1680.18,
+          "oy": 160.0,
+          "height": 1010.0
+        }
+      },
+      "videoPreview": "",
+      "isHide": false,
+      "view": {
+        "isCheck": false,
+        "vlookat": "0",
+        "fovmin": 70.0,
+        "hlookatmax": "180",
+        "fovmax": 120.0,
+        "hlookatmin": -180,
+        "vlookatmin": -90,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": 95.0,
+        "type": 1,
+        "vlookatmax": 90
+      },
+      "videoUrl": "",
+      "compass": {
+        "vlookat": "0",
+        "size": 100,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": "0",
+        "isOpenCompass": false
+      },
+      "name": "scene_8_1pn",
+      "model": {
+        "date": "2026-01-26T12:00:00",
+        "modelUrl": "panos/8_1pn.tiles/model.stl"
+      },
+      "audio": {
+        "explain": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        },
+        "sceneId": 8,
+        "bgm": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        }
+      },
+      "id": 8,
+      "position": {
+        "tx": -488.26,
+        "ty": -1049.13,
+        "tz": -189.36,
+        "oy": 160.0,
+        "height": 1010.0
+      },
+      "thumburl": "panos/8_1pn.tiles/thumb.jpg"
+    },
+    {
+      "sandTableSet": {
+        "sandTableId": "1"
+      },
+      "nameDisplay": {
+        "borderColor": "#34AEE7",
+        "bgColor": "#575757",
+        "fontColorOpacity": 100,
+        "size": 1,
+        "bgColorOpacity": 30,
+        "time": "4",
+        "borderColorOpacity": 30,
+        "fontColor": "#34AEE7",
+        "entryMode": 0
+      },
+      "videoSet": {
+        "startScene": "",
+        "isHotSpotSynchronous": false,
+        "isShowPlaybackProgress": false,
+        "overType": 1,
+        "endScene": "",
+        "isAutoPlay": false,
+        "isImplantSynchronous": false,
+        "type": 1
+      },
+      "shade": {
+        "skyShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "floorShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "sceneId": 9
+      },
+      "title": "scene_9_1pn",
+      "type": 1,
+      "captions": {
+        "bgColor": "#505050",
+        "fontColorOpacity": 100,
+        "linkPath": "",
+        "bgColorOpacity": 30,
+        "content": "",
+        "fontColor": "#FFFFFF",
+        "speed": 0,
+        "openType": 1
+      },
+      "content": "<view fov=\"95.0\" fovmax=\"120.0\" fovmin=\"70.0\" fovtype=\"MFOV\" hlookat=\"0\" limitview=\"lookat\" vlookat=\"0\" hlookatmin=\"-180\" hlookatmax=\"180\" vlookatmin=\"-90\" vlookatmax=\"90\" isCheck=\"false\" />\n<preview url=\"panos/9_1pn.tiles/preview.jpg\" />\n<image style=\"jypano_9_1pn\">\n <cube multires=\"512,640,1152,2304,4736\" url=\"panos/9_1pn.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg\" />\n <depthmap enabled=\"true\" hittest=\"true\" subdiv=\"10000\" scale=\"100\" url=\"panos/9_1pn.tiles/model.stl\" />\n</image>",
+      "relevance": [
+        "scene_1_1pn",
+        "scene_2_1pn",
+        "scene_3_1pn",
+        "scene_4_1pn"
+      ],
+      "videoPreview": "",
+      "isHide": false,
+      "view": {
+        "isCheck": false,
+        "vlookat": "0",
+        "fovmin": 70.0,
+        "hlookatmax": "180",
+        "fovmax": 120.0,
+        "hlookatmin": -180,
+        "vlookatmin": -90,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": 95.0,
+        "type": 1,
+        "vlookatmax": 90
+      },
+      "videoUrl": "",
+      "compass": {
+        "vlookat": "0",
+        "size": 100,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": "0",
+        "isOpenCompass": false
+      },
+      "name": "scene_9_1pn",
+      "model": {
+        "date": "2026-01-26T12:00:00",
+        "modelUrl": "panos/9_1pn.tiles/model.stl"
+      },
+      "audio": {
+        "explain": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        },
+        "sceneId": 9,
+        "bgm": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        }
+      },
+      "id": 9,
+      "position": {
+        "tx": -331.61,
+        "ty": -1049.13,
+        "tz": -1841.27,
+        "oy": 160.0,
+        "height": 1010.0
+      },
+      "thumburl": "panos/9_1pn.tiles/thumb.jpg"
+    },
+    {
+      "sandTableSet": {
+        "sandTableId": "1"
+      },
+      "nameDisplay": {
+        "borderColor": "#34AEE7",
+        "bgColor": "#575757",
+        "fontColorOpacity": 100,
+        "size": 1,
+        "bgColorOpacity": 30,
+        "time": "4",
+        "borderColorOpacity": 30,
+        "fontColor": "#34AEE7",
+        "entryMode": 0
+      },
+      "videoSet": {
+        "startScene": "",
+        "isHotSpotSynchronous": false,
+        "isShowPlaybackProgress": false,
+        "overType": 1,
+        "endScene": "",
+        "isAutoPlay": false,
+        "isImplantSynchronous": false,
+        "type": 1
+      },
+      "shade": {
+        "skyShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "floorShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "sceneId": 10
+      },
+      "title": "scene_10_1pn",
+      "type": 1,
+      "captions": {
+        "bgColor": "#505050",
+        "fontColorOpacity": 100,
+        "linkPath": "",
+        "bgColorOpacity": 30,
+        "content": "",
+        "fontColor": "#FFFFFF",
+        "speed": 0,
+        "openType": 1
+      },
+      "content": "<view fov=\"95.0\" fovmax=\"120.0\" fovmin=\"70.0\" fovtype=\"MFOV\" hlookat=\"0\" limitview=\"lookat\" vlookat=\"0\" hlookatmin=\"-180\" hlookatmax=\"180\" vlookatmin=\"-90\" vlookatmax=\"90\" isCheck=\"false\" />\n<preview url=\"panos/10_1pn.tiles/preview.jpg\" />\n<image style=\"jypano_10_1pn\">\n <cube multires=\"512,640,1152,2304,4736\" url=\"panos/10_1pn.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg\" />\n <depthmap enabled=\"true\" hittest=\"true\" subdiv=\"10000\" scale=\"100\" url=\"panos/10_1pn.tiles/model.stl\" />\n</image>",
+      "relevance": [
+        "scene_1_1pn"
+      ],
+      "videoPreview": "",
+      "isHide": false,
+      "view": {
+        "isCheck": false,
+        "vlookat": "0",
+        "fovmin": 70.0,
+        "hlookatmax": "180",
+        "fovmax": 120.0,
+        "hlookatmin": -180,
+        "vlookatmin": -90,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": 95.0,
+        "type": 1,
+        "vlookatmax": 90
+      },
+      "videoUrl": "",
+      "compass": {
+        "vlookat": "0",
+        "size": 100,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": "0",
+        "isOpenCompass": false
+      },
+      "name": "scene_10_1pn",
+      "model": {
+        "date": "2026-01-26T12:00:00",
+        "modelUrl": "panos/10_1pn.tiles/model.stl"
+      },
+      "audio": {
+        "explain": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        },
+        "sceneId": 10,
+        "bgm": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        }
+      },
+      "id": 10,
+      "position": {
+        "tx": -734.13,
+        "ty": -1049.13,
+        "tz": -2740.36,
+        "oy": 160.0,
+        "height": 1010.0
+      },
+      "thumburl": "panos/10_1pn.tiles/thumb.jpg"
+    },
+    {
+      "sandTableSet": {
+        "sandTableId": "2"
+      },
+      "nameDisplay": {
+        "borderColor": "#34AEE7",
+        "bgColor": "#575757",
+        "fontColorOpacity": 100,
+        "size": 1,
+        "bgColorOpacity": 30,
+        "time": "4",
+        "borderColorOpacity": 30,
+        "fontColor": "#34AEE7",
+        "entryMode": 0
+      },
+      "videoSet": {
+        "startScene": "",
+        "isHotSpotSynchronous": false,
+        "isShowPlaybackProgress": false,
+        "overType": 1,
+        "endScene": "",
+        "isAutoPlay": false,
+        "isImplantSynchronous": false,
+        "type": 1
+      },
+      "shade": {
+        "skyShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "floorShade": {
+          "isFollow": true,
+          "zoom": 80,
+          "revolve": 80
+        },
+        "sceneId": 11
+      },
+      "title": "dollhouse",
+      "type": 1,
+      "captions": {
+        "bgColor": "#505050",
+        "fontColorOpacity": 100,
+        "linkPath": "",
+        "bgColorOpacity": 30,
+        "content": "",
+        "fontColor": "#FFFFFF",
+        "speed": 0,
+        "openType": 1
+      },
+      "content": "",
+      "relevance": [],
+      "videoPreview": "",
+      "isHide": false,
+      "view": {
+        "isCheck": false,
+        "vlookat": "0",
+        "fovmin": 70.0,
+        "hlookatmax": "180",
+        "fovmax": 120.0,
+        "hlookatmin": -180,
+        "vlookatmin": -90,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": 95.0,
+        "type": 1,
+        "vlookatmax": 90
+      },
+      "videoUrl": "",
+      "compass": {
+        "vlookat": "0",
+        "size": 100,
+        "hlookat": "0",
+        "showType": 1,
+        "fov": "0",
+        "isOpenCompass": false
+      },
+      "name": "dollhouse",
+      "model": true,
+      "audio": {
+        "explain": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        },
+        "sceneId": 11,
+        "bgm": {
+          "volume": 80,
+          "isAutoPlay": true,
+          "isLoop": true
+        }
+      },
+      "id": 24,
+      "position": {
+        "tx": 0,
+        "ty": 0,
+        "tz": 0,
+        "oy": 0.0,
+        "height": 1010.0
+      },
+      "thumburl": ""
+    }
+  ],
+  "hotSpotList": [],
+  "groups": [
+    {
+      "name": "Căn 1PN",
+      "name_en": "1 Bedroom",
+      "childGroups": [
+        {
+          "name": "Căn 1PN",
+          "name_en": "1 Bedroom",
+          "footstepControl": {
+            "icon": {
+              "iconSize": 3.2
+            }
+          },
+          "cursor": {
+            "cursorSize": 3.2
+          },
+          "scenes": [
+            "scene_1_1pn",
+            "scene_2_1pn",
+            "scene_3_1pn",
+            "scene_4_1pn",
+            "scene_5_1pn",
+            "scene_6_1pn",
+            "scene_7_1pn",
+            "scene_8_1pn",
+            "scene_9_1pn",
+            "scene_10_1pn",
+            "dollhouse"
+          ]
+        }
+      ]
+    }
+  ],
+  "subgroup": [],
+  "scaleplateList": [],
+  "implantList": [],
+  "sandTable": {
+    "pointArrowColor": "#82C240",
+    "expandColorOpacity": "100",
+    "pointStrokeColorOpacity": 100,
+    "pointArrowStrokeColorOpacity": 100,
+    "pointStrokeColor": "#FFFFFF",
+    "showName": false,
+    "pointArrowColorOpacity": 100,
+    "expandColor": "#801010",
+    "viewingAngleMax": 90,
+    "fillColor": "#1F1F1F",
+    "bgType": 0,
+    "fillColorOpacity": "40",
+    "pointArrowSize": 1.5,
+    "pointSize": 1.5,
+    "pointColorOpacity": 100,
+    "pointArrowStrokeColor": "#FFFFFF",
+    "map": [],
+    "viewingAngleMin": -90,
+    "pointColor": "#82C240"
+  },
+  "tour": {
+    "backScene": true,
+    "closeBgm": true,
+    "hide": true,
+    "loop": true,
+    "fontPosition": 0,
+    "fontSize": 18,
+    "fontStyle": 0,
+    "nodeList": []
+  },
+  "xml": "tour.xml",
+  "open": {
+    "openingAnimation": 0
+  },
+  "base": {
+    "tags": [],
+    "customButton": [],
+    "viewsMarvel": [],
+    "search": {
+      "moveColor": "#E6E7E8",
+      "defaultColor": "#34AEE7",
+      "activeColor": "#34AEE7",
+      "bgColor": "#1A1B22",
+      "defaultColorOpacity": 40,
+      "moveColorOpacity": 100,
+      "bgColorOpacity": 40,
+      "searchRange": [],
+      "showType": 1,
+      "isOpenSearch": false,
+      "activeColorOpacity": 100
+    },
+    "footstepControl": {
+      "icon": {
+        "iconId": "29",
+        "iconType": 0,
+        "iconSize": 1.5,
+        "iconPath": "assets/images/footstepControl/icon.png"
+      },
+      "feedbackNum": 10,
+      "feedbackType": "1",
+      "offsetY": 160
+    },
+    "cursor": {
+      "cursorSize": 1.5
+    },
+    "area": "2",
+    "author": "The Link",
+    "guideLine": {
+      "guideLineType": 0,
+      "guideLineShow": 0,
+      "guideLineList": [],
+      "guideLineWay": 0
+    },
+    "icon": {
+      "moduleList": [
+        {
+          "defaultBgColor": "#1A1B22",
+          "defaultColor": "#EBEDF0",
+          "activeColor": "#F5DEA4",
+          "defaultColorOpacity": "100",
+          "activeBgColor": "#1A1B22",
+          "activeBgColorOpacity": 40,
+          "defaultBgColorOpacity": 40,
+          "title": "场景分组",
+          "key": 0,
+          "activeColorOpacity": "100"
+        },
+        {
+          "defaultBgColor": "#1A1B22",
+          "defaultColor": "#EBEDF0",
+          "activeColor": "#34AEE7",
+          "defaultColorOpacity": "100",
+          "activeBgColor": "#1A1B22",
+          "activeBgColorOpacity": 40,
+          "defaultBgColorOpacity": 40,
+          "title": "全局分组",
+          "key": 1,
+          "activeColorOpacity": "100"
+        },
+        {
+          "defaultBgColor": "#1A1B22",
+          "defaultColor": "#000000",
+          "activeColor": "#34AEE7",
+          "defaultColorOpacity": "80",
+          "activeBgColor": "#1A1B22",
+          "activeBgColorOpacity": 40,
+          "defaultBgColorOpacity": 40,
+          "title": "热点背景",
+          "key": 2,
+          "activeColorOpacity": "100"
+        },
+        {
+          "defaultBgColor": "#1A1B22",
+          "defaultColor": "#EBEDF0",
+          "activeColor": "#34AEE7",
+          "defaultColorOpacity": "100",
+          "activeBgColor": "#1A1B22",
+          "activeBgColorOpacity": 40,
+          "defaultBgColorOpacity": 40,
+          "title": "场景",
+          "key": 3,
+          "activeColorOpacity": "100"
+        },
+        {
+          "defaultBgColor": "#1A1B22",
+          "defaultColor": "#34AEE7",
+          "activeColor": "#34AEE7",
+          "defaultColorOpacity": "100",
+          "activeBgColor": "#1A1B22",
+          "activeBgColorOpacity": 40,
+          "defaultBgColorOpacity": 40,
+          "title": "导览",
+          "key": 4,
+          "activeColorOpacity": "100"
+        },
+        {
+          "defaultBgColor": "#1A1B22",
+          "defaultColor": "#eeeeee",
+          "activeColor": "#eeeeee",
+          "defaultColorOpacity": "100",
+          "activeBgColor": "#1A1B22",
+          "activeBgColorOpacity": 40,
+          "defaultBgColorOpacity": 40,
+          "title": "矩阵背景",
+          "key": 5,
+          "activeColorOpacity": "100"
+        },
+        {
+          "defaultBgColor": "#1A1B22",
+          "defaultColor": "#34AEE7",
+          "activeColor": "#eeeeee",
+          "defaultColorOpacity": "100",
+          "activeBgColor": "#1A1B22",
+          "activeBgColorOpacity": 40,
+          "defaultBgColorOpacity": 40,
+          "title": "按钮颜色",
+          "key": 6,
+          "activeColorOpacity": "100"
+        }
+      ],
+      "btnList": [
+        {
+          "defaultImgFile": "",
+          "activeImgId": "",
+          "activeImgFile": "",
+          "defaultImgId": "",
+          "title": "全屏",
+          "key": 0
+        },
+        {
+          "defaultImgFile": "",
+          "activeImgId": "",
+          "activeImgFile": "",
+          "defaultImgId": "",
+          "title": "VR",
+          "key": 1
+        },
+        {
+          "defaultImgFile": "",
+          "activeImgId": "",
+          "activeImgFile": "",
+          "defaultImgId": "",
+          "title": "清屏",
+          "key": 2
+        },
+        {
+          "defaultImgFile": "",
+          "activeImgId": "",
+          "activeImgFile": "",
+          "defaultImgId": "",
+          "title": "旋转",
+          "key": 3
+        },
+        {
+          "defaultImgFile": "",
+          "activeImgId": "",
+          "activeImgFile": "",
+          "defaultImgId": "",
+          "title": "沙盘",
+          "key": 4
+        },
+        {
+          "defaultImgFile": "",
+          "activeImgId": "",
+          "activeImgFile": "",
+          "defaultImgId": "",
+          "title": "搜索",
+          "key": 5
+        },
+        {
+          "defaultImgFile": "",
+          "activeImgId": "",
+          "activeImgFile": "",
+          "defaultImgId": "",
+          "title": "音乐",
+          "key": 6
+        },
+        {
+          "defaultImgFile": "",
+          "activeImgId": "",
+          "activeImgFile": "",
+          "defaultImgId": "",
+          "title": "讲解",
+          "key": 7
+        },
+        {
+          "defaultImgFile": "",
+          "activeImgId": "",
+          "activeImgFile": "",
+          "defaultImgId": "",
+          "title": "点赞",
+          "key": 8
+        }
+      ]
+    },
+    "customLogo": {
+      "checked": true,
+      "zoom": 100,
+      "position": "1"
+    },
+    "visibles": {
+      "reordering": false,
+      "author": false,
+      "introduce": false,
+      "clear": true,
+      "title": true,
+      "praise": false,
+      "fullScreen": false,
+      "layout": true,
+      "openHint": true,
+      "forwardSensing": false,
+      "openScene": true,
+      "vr": false,
+      "views": false,
+      "enhance": true,
+      "group": true
+    },
+    "isPublicWorks": true,
+    "tour": {
+      "autoJumpNextScene": true,
+      "cruise": true,
+      "showBtn": true,
+      "velocity": 180,
+      "revolve": "left"
+    },
+    "qrCodeLogoUrl": "",
+    "cover": "",
+    "openingPrompt": {
+      "mobileScale": 50,
+      "timeNumber": 0,
+      "pcScale": 50
+    },
+    "model": {
+      "date": "2024-05-31T11:36:34",
+      "modelUrl": ""
+    },
+    "projectName": "K-Home Avenue",
+    "customButtonControl": {
+      "bgColor": "#000000",
+      "bgTransparency": 30,
+      "controlRetractId": "",
+      "controlExpandId": "",
+      "show": true,
+      "controlExpandUrl": "",
+      "controlRetractUrl": "",
+      "controlScale": 100
+    },
+    "views": 0
+  }
+}

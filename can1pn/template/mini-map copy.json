@@ -1,0 +1,388 @@
+[
+  {
+    "id": "1",
+    "name": "Tầng 1",
+    "name_en": "Floor 1",
+    "url": "plugins/jy-ui/img/tang1.png",
+    "type": 1,
+    "isuse": true,
+    "distance": 1200,
+    "position": {
+      "bottom": "22px",
+      "left": "20px"
+    },
+    "theme": {
+      "backgroundColor": "#34513C",
+      "textColor": "#F5DEA4",
+      "borderRadius": "16px",
+      "scaleZoom": 1.4
+    },
+    "pointSize": 10,
+    "radar": {
+      "size": 80,
+      "color": "rgba(130, 194, 64, 0.6)",
+      "fov": 90
+    },
+    "openButton": {
+      "position": {
+        "bottom": "22px",
+        "left": "20px"
+      },
+      "size": "40px",
+      "backgroundColor": "#34513C",
+      "iconColor": "#F5DEA4"
+    },
+    "mobile": {
+      "position": {
+        "top": "auto",
+        "bottom": "10px",
+        "right": "auto",
+        "left": "10px"
+      },
+      "mapWidth": 148,
+      "mapHeight": 200,
+      "pointSize": 6,
+      "radar": {
+        "size": 36,
+        "color": "rgba(130, 194, 64, 0.8)"
+      },
+      "theme": {
+        "borderRadius": "12px",
+        "scaleZoom": 2
+      },
+      "openButton": {
+        "position": {
+          "top": "auto",
+          "bottom": "10px",
+          "right": "auto",
+          "left": "10px"
+        },
+        "size": "34px"
+      }
+    },
+    "mapWidth": 230,
+    "mapHeight": 350,
+    "showSandTable": true,
+    "nameColor": "#FFFFFF",
+    "points": [
+      {
+        "sceneName": "scene_030",
+        "left": 53,
+        "top": 65,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_024",
+        "left": 31,
+        "top": 9,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_025",
+        "left": 65.5,
+        "top": 20,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_026",
+        "left": 43,
+        "top": 25,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_027",
+        "left": 60.5,
+        "top": 34,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_028",
+        "left": 30,
+        "top": 38,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_029",
+        "left": 50,
+        "top": 51,
+        "rotate": 0
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Tầng 2",
+    "name_en": "Floor 2",
+    "url": "plugins/jy-ui/img/tang2.png",
+    "type": 1,
+    "isuse": true,
+    "distance": 1200,
+    "position": {
+      "bottom": "22px",
+      "left": "20px"
+    },
+    "theme": {
+      "backgroundColor": "#34513C",
+      "textColor": "#F5DEA4",
+      "borderRadius": "16px",
+      "scaleZoom": 1.4
+    },
+    "pointSize": 10,
+    "radar": {
+      "size": 80,
+      "color": "rgba(130, 194, 64, 0.6)",
+      "fov": 90
+    },
+    "openButton": {
+      "position": {
+        "bottom": "22px",
+        "left": "20px"
+      },
+      "size": "40px",
+      "backgroundColor": "#34513C",
+      "iconColor": "#F5DEA4"
+    },
+    "mobile": {
+      "position": {
+        "top": "auto",
+        "bottom": "10px",
+        "right": "auto",
+        "left": "10px"
+      },
+      "mapWidth": 148,
+      "mapHeight": 200,
+      "pointSize": 6,
+      "radar": {
+        "size": 36,
+        "color": "rgba(130, 194, 64, 0.8)"
+      },
+      "theme": {
+        "borderRadius": "12px",
+        "scaleZoom": 2
+      },
+      "openButton": {
+        "position": {
+          "top": "auto",
+          "bottom": "10px",
+          "right": "auto",
+          "left": "10px"
+        },
+        "size": "34px"
+      }
+    },
+    "mapWidth": 230,
+    "mapHeight": 350,
+    "showSandTable": true,
+    "nameColor": "#FFFFFF",
+    "points": [
+      {
+        "sceneName": "scene_005",
+        "left": 40,
+        "top": 40,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_001",
+        "left": 78.5,
+        "top": 16,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_002",
+        "left": 62,
+        "top": 19,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_003",
+        "left": 45,
+        "top": 16,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_004",
+        "left": 26,
+        "top": 15,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_006",
+        "left": 55,
+        "top": 30,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_007",
+        "left": 53,
+        "top": 50,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_008",
+        "left": 66,
+        "top": 42,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_009",
+        "left": 77,
+        "top": 41,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_010",
+        "left": 55,
+        "top": 65,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_011",
+        "left": 25,
+        "top": 54,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_012",
+        "left": 36,
+        "top": 66,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_013",
+        "left": 33,
+        "top": 82.5,
+        "rotate": 0
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Tầng 3",
+    "name_en": "Floor 3",
+    "url": "plugins/jy-ui/img/tang3.png",
+    "type": 1,
+    "isuse": true,
+    "distance": 1200,
+    "position": {
+      "bottom": "22px",
+      "left": "20px"
+    },
+    "theme": {
+      "backgroundColor": "#34513C",
+      "textColor": "#F5DEA4",
+      "borderRadius": "16px",
+      "scaleZoom": 1.4
+    },
+    "pointSize": 10,
+    "radar": {
+      "size": 80,
+      "color": "rgba(130, 194, 64, 0.6)",
+      "fov": 90
+    },
+    "openButton": {
+      "position": {
+        "top": "auto",
+        "bottom": "10px",
+        "right": "auto",
+        "left": "10px"
+      },
+      "size": "40px",
+      "backgroundColor": "#34513C",
+      "iconColor": "#F5DEA4"
+    },
+    "mobile": {
+      "position": {
+        "top": "auto",
+        "bottom": "10px",
+        "right": "auto",
+        "left": "10px"
+      },
+      "mapWidth": 148,
+      "mapHeight": 200,
+      "pointSize": 6,
+      "radar": {
+        "size": 36,
+        "color": "rgba(130, 194, 64, 0.8)"
+      },
+      "theme": {
+        "borderRadius": "12px",
+        "scaleZoom": 2
+      },
+      "openButton": {
+        "position": {
+          "top": "auto",
+          "bottom": "10px",
+          "right": "auto",
+          "left": "10px"
+        },
+        "size": "34px"
+      }
+    },
+    "mapWidth": 230,
+    "mapHeight": 350,
+    "showSandTable": true,
+    "nameColor": "#FFFFFF",
+    "points": [
+      {
+        "sceneName": "scene_020",
+        "left": 37.5,
+        "top": 40,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_014",
+        "left": 77,
+        "top": 41,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_015",
+        "left": 57,
+        "top": 21,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_016",
+        "left": 38.5,
+        "top": 14,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_017",
+        "left": 24,
+        "top": 13,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_018",
+        "left": 77,
+        "top": 16,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_019",
+        "left": 55,
+        "top": 38.5,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_021",
+        "left": 60,
+        "top": 55,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_022",
+        "left": 23.5,
+        "top": 54,
+        "rotate": 0
+      },
+      {
+        "sceneName": "scene_023",
+        "left": 33,
+        "top": 65,
+        "rotate": 0
+      }
+    ]
+  }
+]
