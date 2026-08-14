@@ -23,17 +23,19 @@ graph TD
     end
     
     subgraph MEASURE3D_MODULE [MEASURE3D MODULE ARCHITECTURE]
-        B --> F["HUD UI Panel (HTML/CSS Glassmorphism)"]
+        B --> F["HUD UI Panel (MUI Style SVG & Glassmorphism - Top Right)"]
         B --> G["Mode Controller (Walk Mode vs Measure Mode)"]
-        B --> H["Drawing & Calculation Engine (Lines, Markers, Distance, Slope)"]
-        E -->|Tọa độ thực X, Y, Z & Pháp tuyến Normal nx, ny, nz| H
+        B --> H["Submode Handler (Point-to-Point vs Surface-to-Surface Active States)"]
+        B --> I["Drawing & Calculation Engine (Lines, Markers, Distance, Slope)"]
+        E -->|Tọa độ thực X, Y, Z & Pháp tuyến Normal nx, ny, nz| I
     end
 
-    subgraph SYSTEM_INTEGRATION [SYSTEM INTEGRATION & CONFLICT PREVENTION]
-        G -->|Vô hiệu hóa Hotspot di chuyển| I["Navigation Lock (hs.enabled = false)"]
-        G -->|Khóa cơ chế click chuyển scene| J["krpano.jyNavEnabled = true"]
-        G -->|Ẩn con trỏ điều hướng sàn| K["krpanoAPI.js & cursor-arrow.js (measure3d_loop check)"]
-        H -->|Xuất mã XML cấu hình| L["Clipboard / Backend API Storage"]
+    subgraph SYSTEM_INTEGRATION [SYSTEM INTEGRATION & CONFLICT RESOLUTION]
+        G -->|Vô hiệu hóa Hotspot di chuyển| J["Navigation Lock (hs.enabled = false)"]
+        G -->|Khóa cơ chế click chuyển scene| K["krpano.jyNavEnabled = true"]
+        F -->|Hover Panel (overMeasureUI = true)| L["Ẩn hotspot_mouse, arrow & measure3d_cursor"]
+        F -->|CSS Isolation| M["Chỉ ẩn cursor trên #pano canvas, khôi phục OS cursor trên UI"]
+        I -->|Xuất mã XML cấu hình| N["Clipboard / Backend API Storage"]
     end
 ```
 
@@ -41,7 +43,7 @@ graph TD
 
 ## 2. Phân Tích Mối Quan Hệ Giữa `tour.xml` & `measure3d.xml`
 
-Trong [tour.xml](file:///Users/gokuwebdev/Documents/GitHub/measure_3d/can1pn/tour.xml), việc tích hợp và thực thi `measure3d.xml` gắn liền với các thành phần cốt lõi sau:
+Trong [tour.xml](file:///Users/gokuwebdev/Documents/GitHub/measure_3d/can1pn/tour.xml), việc tích hợp và thực thi `measure3d.xml` gắn liền với các thành phần cốt lõi:
 
 ```xml
 <krpano version="1.23" title="Virtual Tour">
@@ -99,49 +101,45 @@ Trong [tour.xml](file:///Users/gokuwebdev/Documents/GitHub/measure_3d/can1pn/tou
 sequenceDiagram
     autonumber
     actor User as Người dùng
-    participant UI as Giao diện HUD (measure3d_ui)
+    participant UI as Giao diện HUD (Góc Phải Trên)
     participant Engine as Krpano Raycaster
     participant Hotspot as Hệ thống Hotspot 3D
     participant Storage as Clipboard / State
 
-    User->>UI: Click chọn tab "📏 Đo" / "Đo giữa 2 điểm"
-    UI->>Engine: start_measuring_between_points(true)
+    User->>UI: Click chọn tab "📏 Đo"
+    UI->>Engine: Kích hoạt chế độ đo, highlight active "Đo giữa 2 điểm"
     Engine->>Hotspot: Vô hiệu hóa hotspot điều hướng (enabled=false)
     Engine->>Engine: Khởi động vòng lặp measure3d_loop
-    User->>Engine: Double-click điểm thứ 1 (P1)
-    Engine->>Hotspot: Tạo marker P1 & đường line 3D
-    User->>Engine: Rê chuột đến điểm thứ 2 (P2)
-    Engine->>Hotspot: Cập nhật tọa độ P2 thời gian thực
-    User->>Engine: Double-click chốt điểm thứ 2 (P2)
-    Engine->>Hotspot: Tạo marker P2, chốt line, tạo nhãn kích thước (linetext)
+    User->>UI: Click chuyển sang "Đo giữa 2 bề mặt"
+    UI->>UI: Highlight active "Đo giữa 2 bề mặt", xóa nét vẽ dở dang (cleanup_draft)
+    User->>Engine: Double-click vào 1 điểm trên tường
+    Engine->>Engine: Raycast theo vector pháp tuyến (nx, ny, nz)
+    Engine->>Hotspot: Tự động bắt bề mặt đối diện, vẽ line 3D & tạo nhãn kích thước (linetext)
     User->>UI: Bấm "💾 Lưu số đo"
     UI->>Storage: Trích xuất XML toàn bộ số đo & copy vào Clipboard
 ```
 
 ---
 
-## 4. Chi Tiết Các Tính Năng Trong `measure3d.xml`
+## 4. Chi Tiết Các Tính Năng Đã Hoàn Thiện Trong `measure3d.xml`
 
-### 4.1. Chuyển Đổi Trạng Thái Segmented (Walk Mode vs Measure Mode)
-- **🚶 Đi (Walk Mode)**: Chế độ tham quan tour thông thường. Tất cả các sự kiện click, chuyển scene, con trỏ chuột sàn (`hotspot_mouse`, `cursor-arrow`) hoạt động chuẩn xác.
-- **📏 Đo (Measure Mode)**: Bật chế độ đo đạc. Tự động vô hiệu hóa các hotspot di chuyển và chặn chuyển scene khi double-click.
+### 4.1. Giao Diện Chuẩn Material Design (MUI Style Icons & Top-Right Position)
+- **Vị trí cố định góc trên bên phải**: Cấu hình `ui_pos.normal="righttop,20,20"` và `ui_pos.mobile="righttop,10,10"` giúp panel không che khuất các nút điều hướng chính ở góc dưới hay giữa màn hình.
+- **Biểu tượng Vector MUI SVG sắc nét**: Header (`StraightenRounded`), Tab Đi (`DirectionsWalkRounded`), Tab Đo (`SquareFootRounded`), Nút Đo 2 điểm (`LinearScaleRounded`), Nút Đo bề mặt (`SwapHorizRounded`), Nút Lưu (`SaveRounded`).
+- **Hiệu ứng Active Item (`.m3d_btn_active`)**: Phân biệt trực quan chế độ đo đang chọn bằng nền cam nổi bật, viền highlight và icon box phát sáng.
 
-### 4.2. Hai Phương Thức Đo Đạc
-1. **Đo giữa 2 điểm tự do (`start_measuring_between_points`)**:
+### 4.2. Hai Phương Thức Đo Đạc Linh Hoạt
+1. **Đo giữa 2 điểm tự do (`start_measuring_between_points` - Type 1)**:
    - Double-click chọn **Điểm 1** $\rightarrow$ Rê chuột $\rightarrow$ Double-click chốt **Điểm 2**.
-2. **Đo giữa 2 bề mặt đối diện (`start_measuring_between_surfaces`)**:
-   - Double-click vào một điểm trên tường/sàn $\rightarrow$ Hệ thống tự động bắn một tia vuông góc theo vector pháp tuyến $(nx, ny, nz)$ qua hàm `krpano.raycast(hs.tx, hs.ty, hs.tz, hs.nx, hs.ny, hs.nz)` để tìm điểm giao với bức tường/trần đối diện và tự động chốt kích thước.
+2. **Đo giữa 2 bề mặt đối diện (`start_measuring_between_surfaces` - Type 2)**:
+   - Double-click vào một điểm trên tường/sàn $\rightarrow$ Hệ thống tự động bắn tia vuông góc theo vector pháp tuyến $(nx, ny, nz)$ qua `krpano.raycast()` để tìm điểm giao với bức tường/trần đối diện và tự động chốt kích thước.
 
-### 4.3. Quản Lý & Xóa Đoạn Đo Đã Tạo
-- Mỗi đoạn đo sinh ra một nhãn văn bản 3D (`measure3d_linetext`) tại trung điểm đoạn thẳng:
-  $$P_{center} = 0.5 \times P_1 + 0.5 \times P_2$$
-- **Hover/Click để xóa**: Khi rê chuột hoặc click vào nhãn số đo, nội dung nhãn chuyển sang `❌ Delete`. Click lần nữa sẽ xóa sạch đoạn thẳng, 2 marker đầu mút và chính nhãn đó.
+### 4.3. Quản Lý & Dọn Dẹp Nét Vẽ Dở Dang (`m3d_cleanup_draft`)
+- Khi người dùng đang đo dở (chấm 1 điểm) nhưng đổi ý chuyển sang chế độ khác, hàm `window.m3d_cleanup_draft()` tự động xóa sạch điểm neo và đường line tạm để tránh rác màn hình.
+- **Hover/Click để xóa**: Click vào nhãn số đo hiển thị `❌ Delete`. Click lần 2 xóa hoàn toàn đoạn thẳng và 2 marker đầu mút.
 
 ### 4.4. Giữ Số Đo Khi Chuyển Cảnh (`keep="true"`)
-- Tất cả các đối tượng vẽ thước đo (`line`, `p1marker`, `p2marker`, `lineinfo`) đều được thiết lập `keep = true`. Nhờ các scene dùng chung mô hình 3D STL và gốc tọa độ thống nhất, khi người dùng di chuyển giữa các phòng, các kích thước đã đo vẫn nằm đúng vị trí trong không gian.
-
-### 4.5. Xuất Dữ Liệu Đo Đạc (`save_measurements`)
-- Quét toàn bộ hotspot có style thuộc nhóm thước đo (`measure3d_line`, `measure3d_linetext`, `measure3d_marker`), xuất ra chuỗi XML nguyên bản và ghi vào Clipboard thông qua `navigator.clipboard.writeText(xmlcode)`.
+- Tất cả các đối tượng vẽ thước đo (`line`, `p1marker`, `p2marker`, `lineinfo`) đều được gắn cờ `keep = true`. Nhờ các scene dùng chung mô hình 3D STL và gốc tọa độ thống nhất, khi người dùng di chuyển giữa các phòng, các kích thước đã đo vẫn nằm đúng vị trí trong không gian.
 
 ---
 
@@ -152,8 +150,8 @@ Thẻ cấu hình gốc tại đầu file [measure3d.xml](file:///Users/gokuwebd
 ```xml
 <measure3d
     ui.bool="true"
-    ui_pos.normal="left,10,0"
-    ui_pos.mobile="lefttop,10,10"
+    ui_pos.normal="righttop,20,20"
+    ui_pos.mobile="righttop,10,10"
     ui_dragable.bool="true"
     gap.number="0.0"
     showslope.bool="false"
@@ -166,10 +164,10 @@ Thẻ cấu hình gốc tại đầu file [measure3d.xml](file:///Users/gokuwebd
 | Thuộc Tính | Kiểu Dữ Liệu | Giá Trị Mặc Định | Mô Tả Chức Năng |
 | :--- | :---: | :---: | :--- |
 | `ui` | `boolean` | `true` | Bật/tắt thanh điều khiển HUD giao diện đo đạc trên màn hình. |
-| `ui_pos.normal` | `string` | `"left,10,0"` | Vị trí neo của panel HUD trên desktop: `[align, x, y]`. |
-| `ui_pos.mobile` | `string` | `"lefttop,10,10"` | Vị trí neo của panel HUD trên thiết bị di động / màn hình nhỏ. |
+| `ui_pos.normal` | `string` | `"righttop,20,20"` | Vị trí neo của panel HUD trên desktop (Góc trên bên phải). |
+| `ui_pos.mobile` | `string` | `"righttop,10,10"` | Vị trí neo của panel HUD trên thiết bị di động. |
 | `ui_dragable` | `boolean` | `true` | Cho phép người dùng kéo thả panel HUD tự do trên màn hình. |
-| `gap` | `number` | `0.0` | Khoảng cách bù offset theo phương vector pháp tuyến bề mặt để tránh dính hình (Z-fighting). |
+| `gap` | `number` | `0.0` | Khoảng cách bù offset theo phương pháp tuyến bề mặt để tránh dính hình (Z-fighting). |
 | `showslope` | `boolean` | `false` | Hiển thị thêm góc nghiêng (độ dốc tính bằng độ `°`) bên dưới giá trị khoảng cách. |
 | `unit_format` | `expression` | `"roundval(v,1) + ' cm'"` | Công thức định dạng đơn vị đo (`' cm'`, `' m'`, `' mm'`). |
 
@@ -177,26 +175,17 @@ Thẻ cấu hình gốc tại đầu file [measure3d.xml](file:///Users/gokuwebd
 
 ## 6. Các Cơ Chế Giải Quyết Xung Đột Hệ Thống (Conflict Resolution)
 
-Trong hệ thống Virtual Tour hoàn chỉnh, `measure3d.xml` phối hợp chặt chẽ với các script ngoại vi để đảm bảo trải nghiệm mượt mà không lỗi xung đột:
+### 6.1. Khắc Phục Lỗi Con Trỏ Chuột Hover Popup
+- **Phân tách CSS**: [index.html](file:///Users/gokuwebdev/Documents/GitHub/measure_3d/can1pn/index.html) chỉ áp dụng `cursor: none !important` cho `#pano canvas`, đảm bảo con trỏ chuột hệ điều hành (`default`, `pointer`, `move`) hiển thị rõ ràng trên panel UI.
+- **Ẩn toàn bộ con trỏ 3D khi hover UI**: Khi `krpano.overMeasureUI === true`:
+  * [krpanoAPI.js](file:///Users/gokuwebdev/Documents/GitHub/measure_3d/can1pn/plugins/utils/krpanoAPI.js): Ẩn con trỏ đĩa sàn `hotspot_mouse`.
+  * [cursor-arrow.js](file:///Users/gokuwebdev/Documents/GitHub/measure_3d/can1pn/plugins/utils/cursor-arrow.js): Ẩn mũi tên định hướng `hotspot_mouse_arrow`.
+  * [measure3d.xml](file:///Users/gokuwebdev/Documents/GitHub/measure_3d/can1pn/plugins/measure3d.xml): Ẩn con trỏ đo tròn `measure3d_cursor`.
 
-### 6.1. Ngăn Chặn Click Xuyên Thấu (Click-through UI Prevention)
-- Layer `measure3d_ui` được thiết lập `capture: true` và `bgcapture: true` để hấp thụ toàn bộ sự kiện chuột trên UI.
-- Bổ sung biến cờ `krpano.overMeasureUI = true/false` trong `ui.onover` và `ui.onout` để các sự kiện click của viewer bỏ qua khi người dùng bấm vào các nút điều khiển.
+### 6.2. Đảm Bảo Chuẩn Cú Pháp XML (CDATA Encapsulation)
+- Toàn bộ các script JavaScript bên trong `<action ... type="Javascript">` đều được bao bọc bởi khối `<![CDATA[ ... ]]>`, loại trừ hoàn toàn các lỗi phân tích cú pháp XML (`xmlParseEntityRef: no name` do các ký tự `&&`, `<`, `>` gây ra).
 
-### 6.2. Đồng Bộ Trạng Thái Với Con Trỏ Điều Hướng (`krpanoAPI.js` & `cursor-arrow.js`)
-- Trong [krpanoAPI.js](file:///Users/gokuwebdev/Documents/GitHub/measure_3d/can1pn/plugins/utils/krpanoAPI.js) và [cursor-arrow.js](file:///Users/gokuwebdev/Documents/GitHub/measure_3d/can1pn/plugins/utils/cursor-arrow.js), hệ thống kiểm tra biến cờ `measure3d_loop`:
-  ```javascript
-  if (window.krpano && (window.krpano.get("measure3d_loop") == true || window.krpano.measure3d_loop === true)) {
-      // Ẩn con trỏ điều hướng di chuyển sàn khi đang trong chế độ đo
-      hotspot.visible = false;
-  }
-  ```
-
-### 6.3. Khóa Chức Năng Tự Động Chuyển Điểm Của Navigator (`jy_nav.js`)
-- Khi kích hoạt `measure3d_start`, biến `krpano.jyNavEnabled` được gán bằng `true` và toàn bộ các hotspot không thuộc nhóm `measure3d` đều bị chuyển sang `enabled = false`.
-- Khi gọi `stop_measuring()`, hệ thống khôi phục `krpano.jyNavEnabled = false` và bật lại `enabled = true` cho tất cả hotspot.
-
-### 6.4. Tự Động Hủy Đo Khi Đổi Scene ([config.xml](file:///Users/gokuwebdev/Documents/GitHub/measure_3d/can1pn/plugins/jy-config/config.xml#L244))
+### 6.3. Tự Động Hủy Đo Khi Đổi Scene ([config.xml](file:///Users/gokuwebdev/Documents/GitHub/measure_3d/can1pn/plugins/jy-config/config.xml#L244))
 - Trong action `showFlootHotspot` khi chuyển cảnh:
   ```xml
   <action name="showFlootHotspot" scope="local">
@@ -208,52 +197,40 @@ Trong hệ thống Virtual Tour hoàn chỉnh, `measure3d.xml` phối hợp ch�
 
 ---
 
-## 7. Javascript API Tương Tác Ngoài (External Integration)
+## 7. Hướng Dẫn & Khuyến Nghị Mã Hóa Bảo Mật (Security & IP Protection)
 
-Dành cho việc điều khiển trực tiếp từ giao diện bên ngoài (Vue.js / React / Web UI):
+Để bảo vệ bí mật công nghệ, thuật toán tính toán và dữ liệu mô hình 3D của công ty khỏi việc bị sao chép hoặc trích xuất trái phép, dưới đây là chiến lược bảo mật toàn diện:
 
-```javascript
-// 1. Bật chế độ đo giữa 2 điểm tự do
-window.krpano.call("start_measuring_between_points(true);");
-
-// 2. Bật chế độ đo tự động giữa 2 bề mặt đối diện
-window.krpano.call("start_measuring_between_surfaces(true);");
-
-// 3. Dừng đo, chuyển về chế độ Walk
-window.krpano.call("stop_measuring();");
-
-// 4. Xuất toàn bộ số đo ra Clipboard
-window.krpano.call("save_measurements();");
-
-// 5. Kiểm tra trạng thái đo hiện tại
-const isMeasuring = window.krpano.get("measure3d_loop") === true;
-
-// 6. Chuyển đổi đơn vị đo động sang Mét (m)
-window.krpano.set("measure3d.unit_format", "roundval(v/100, 2) + ' m'");
+```mermaid
+graph TD
+    subgraph SECURITY_STRATEGY [CHIẾN LƯỢC BẢO MẬT & MÃ HÓA VIRTUAL TOUR]
+        A["1. Dữ Liệu 3D Mesh (.stl / .depth)"] -->|Mã hóa / Nén nhị phân| B["Krpano Protect Tool / Custom XOR/AES"]
+        C["2. Logic XML & Plugin (measure3d.xml, tour.xml)"] -->|Mã hóa XML sang nhị phân .kencrypt| D["kencrypt / kprotect Tool"]
+        E["3. Source Code JavaScript (krpanoAPI.js, jy-ui)"] -->|Uglify / Obfuscation| F["JavaScript Obfuscator (Control Flow + String Encryption)"]
+        G["4. Tọa độ Scene & project.json"] -->|Payload JWT / Base64 AES Token| H["Backend API Authentication"]
+    end
 ```
+
+### Các thành phần cần mã hóa ưu tiên:
+
+| Thành Phần | Định Dạng File | Mức Độ Nhạy Cảm | Phương Pháp Mã Hóa Khuyến Nghị |
+| :--- | :--- | :---: | :--- |
+| **Lưới 3D Không Gian** | `model.stl` | **RẤT CAO** (Bí mật kiến trúc) | Đổi sang định dạng mã hóa `.depth` của Krpano hoặc mã hóa nhị phân tùy chỉnh giải mã trong WebGL memory. |
+| **Logic Thước Đo 3D** | `measure3d.xml`, `walk.xml` | **CAO** (Bản quyền thuật toán) | Sử dụng công cụ `kencrypt` của Krpano để mã hóa file XML thành file nhị phân mã hóa không thể đọc dạng text. |
+| **API Core & Navigation** | `krpanoAPI.js`, `cursor-arrow.js` | **CAO** (Logic sản phẩm) | Sử dụng **JavaScript Obfuscator** (Control Flow Flattening, Mangling Variable Names, String Array Encryption). |
+| **Dữ Liệu Dự Án** | `project.json`, `mini-map.json` | **TRUNG BÌNH** (Thông tin layout) | Tải qua REST API có xác thực Token/Signature thay vì lưu file tĩnh công khai. |
 
 ---
 
-## 8. Best Practices & Hướng Dẫn Kiểm Thử
-
-> [!IMPORTANT]
-> **1. Quy Chuẩn Tỷ Lệ 3D Mesh (Blender Unit Scale)**  
-> - File `model.stl` xuất từ phần mềm 3D (Blender/3ds Max) phải theo tỷ lệ: **1 Unit = 1 Meter**.  
-> - Trong thẻ `<depthmap>`, thuộc tính `scale="100"` dùng để quy đổi 1m thành 100 đơn vị Krpano (cm).
-
-> [!WARNING]
-> **2. Triệt Tiêu Hiện Tượng Rách Nét / Nhấp Nháy (Z-Fighting)**  
-> - Các style của thước đo (`measure3d_line`, `measure3d_marker`, `measure3d_linetext`) đều được tối ưu với:
->   `depthbuffer="false"`, `depthwrite="false"` và `depthoffset="-200"`.
-
-### Checklist Kiểm Thử Nhanh:
+## 8. Checklist Kiểm Thử Nhanh (Verification Checklist)
 
 | STT | Thao Tác Kiểm Tra | Kết Quả Đạt Chuẩn |
 | :---: | :--- | :--- |
-| 1 | Bật tab **📏 Đo** trên panel HUD | Hotspot di chuyển sàn ẩn đi, con trỏ đo 3D xuất hiện bám sát bề mặt lưới STL. |
-| 2 | Double-click chọn 2 điểm bất kỳ | Đoạn thẳng 3D xuất hiện chính xác nối 2 điểm kèm nhãn hiển thị số đo (cm). |
-| 3 | Thử đo 2 bề mặt đối diện | Tia tự động bắt vuông góc mặt phẳng đối diện và sinh ra khoảng cách lọt lòng. |
-| 4 | Rê chuột vào nhãn số đo và click | Nhãn đổi sang `❌ Delete` và click lần 2 xóa sạch đường đo. |
-| 5 | Chuyển sang scene/phòng khác | Các đường đo đã vẽ vẫn cố định chính xác tại vị trí cũ trong không gian 3D. |
-| 6 | Bấm nút **💾 Lưu số đo** | Toàn bộ thẻ XML của số đo được sao chép vào Clipboard và hiển thị thông báo. |
-| 7 | Nhấn phím **ESC** hoặc tab **🚶 Đi** | Thoát chế độ đo lập tức, khôi phục tương tác chuyển cảnh thông thường. |
+| 1 | Rê chuột vào panel UI góc trên bên phải | Con trỏ chuột OS hiển thị chuẩn xác (mũi tên, bàn tay pointer, move). Con trỏ sàn 360 & mũi tên ẩn hoàn toàn. |
+| 2 | Bật tab **📏 Đo** | Tab Đo sáng cam, nút **Đo giữa 2 điểm** được highlight active mặc định. |
+| 3 | Click nút **Đo giữa 2 bề mặt** | Nút **Đo giữa 2 bề mặt** đổi sang active, xóa nét vẽ dở nếu có. Double-click tường tự bắt khoảng cách lọt lòng. |
+| 4 | Click lại **Đo giữa 2 điểm** | Trạng thái active chuyển sang nút 2 điểm ngay lập tức. Double-click 2 điểm tự do hoạt động bình thường. |
+| 5 | Rê chuột vào nhãn số đo và click | Nhãn đổi sang `❌ Delete` và click lần 2 xóa sạch đường đo. |
+| 6 | Chuyển sang scene/phòng khác | Các đường đo đã vẽ vẫn cố định chính xác tại vị trí cũ trong không gian 3D. |
+| 7 | Bấm nút **💾 Lưu số đo** | Toàn bộ thẻ XML của số đo được sao chép vào Clipboard và hiển thị thông báo popup. |
+| 8 | Nhấn phím **ESC** hoặc tab **🚶 Đi** | Thoát chế độ đo lập tức, khôi phục tương tác chuyển cảnh thông thường. |
